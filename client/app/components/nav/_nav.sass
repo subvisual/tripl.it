@@ -1,0 +1,18 @@
+$navigation-background: $blue
+$navigation-color: $white
+
+.Navigation, .Navigation-inside
+  @include display(flex)
+  @include flex-wrap(nowrap)
+  @include align-items(center)
+  @include justify-content(space-between)
+  width: 100%
+  height: $navigation-height
+  background: $navigation-background
+  color: $navigation-color
+  padding: $space / 2 $space
+  // needed to stay above animation
+  z-index: 102 
+
+  img
+    max-height: 100%

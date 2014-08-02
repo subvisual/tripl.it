@@ -1,0 +1,7 @@
+<section ng-controller="ShowTripController">
+    <h1>Show Trip</h1>
+    <ul class="BoxList BoxList--timeline">
+        <box-image name="expense.description" ng-repeat="expense in trip.expenses track by $index"></box-image>
+        <box-image class="Box--alt" name="startedDescription"></box-image>
+    </ul>
+</section>
