@@ -1,11 +1,10 @@
 app = angular.module 'triplit', ['ui.router', 'ngAnimate', 'lbServices']
 
 app.controller 'TripsController', ($scope, Trip) ->
-  debugger
-  Trip.all (trips) ->
+  Trip.query (trips) ->
     $scope.trips = trips
 
-app.controller 'NewTripController', ($scope, TripForm) ->
+app.controller 'NewTripController', ($scope, $state, TripForm) ->
   $scope.trip = TripForm
 
   $scope.cancel = ->
@@ -17,7 +16,7 @@ app.controller 'NewTripController', ($scope, TripForm) ->
 
 app.controller 'ShowTripController', ($scope, $stateParams, Trip) ->
   $scope.startedDescription = 'Trip started'
-  Trip.get $stateParams.id, (trip) ->
+  Trip.get {id: $stateParams.id}, (trip) ->
     $scope.trip = trip
 
 app.run ($rootScope, $window) ->

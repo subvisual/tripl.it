@@ -1,18 +1,22 @@
 {
-  "name": "Trip",
-  "plural": "Trips",
+  "name": "Expense",
+  "plural": "Expenses",
   "base": "PersistedModel",
   "properties": {
-    "name": {
+    "description": {
       "type": "string",
+      "required": true
+    },
+    "value": {
+      "type": "number",
       "required": true
     }
   },
   "validations": [],
   "relations": {
-    "expenses": {
-      "type": "hasMany",
-      "model": "Expense",
+    "trip": {
+      "type": "belongsTo",
+      "model": "Trip",
       "foreignKey": "trip_id"
     }
   },
