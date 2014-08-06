@@ -47,7 +47,7 @@ module.exports = (grunt) ->
     coffee:
       compile:
         files:
-          '<%= dist %>/js/app.js': '<%= app %>/js/{,*/}*.coffee'
+          '<%= dist %>/js/app.js': ['<%= app %>/js/{,*/}*.coffee', '<%= app %>/components/{,*/}*.coffee']
     sass:
       dist:
         options:
@@ -77,7 +77,7 @@ module.exports = (grunt) ->
         files: [{
           expand: true
           cwd: '<%= app %>/'
-          src: ['index.html', 'partials/**', 'components/**', 'img/*']
+          src: ['index.html', 'partials/*/*.html', 'components/*/*.html', 'img/*']
           dest: '<%= dist %>/'
         },{
           expand: true
@@ -99,7 +99,7 @@ module.exports = (grunt) ->
         ]
         tasks: ['copy', 'useminPrepare','concat', 'uglify', 'usemin', 'htmlmin']
       coffee:
-        files: '<%= app %>/js/{,*/}*.coffee'
+        files: ['<%= app %>/js/{,*/}*.coffee', '<%= app %>/components/{,*/}*.coffee']
         tasks: 'coffee'
       sass:
         files: ['<%= app %>/components/{,*/}*.sass']

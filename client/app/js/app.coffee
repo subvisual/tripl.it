@@ -19,6 +19,9 @@ app.controller 'ShowTripController', ($scope, $stateParams, Trip) ->
   Trip.get {id: $stateParams.id}, (trip) ->
     $scope.trip = trip
 
+app.controller 'ActionBarController', ($scope, $stateParams) ->
+  debugger
+
 app.run ($rootScope, $window) ->
   $rootScope.slide = ''
   $rootScope.$on '$stateChangeStart', () ->

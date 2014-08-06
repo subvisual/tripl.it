@@ -2,6 +2,6 @@
 
 <div ng-controller="TripsController">
     <ul class="BoxList">
-        <box name="trip.name" ng-click="next()" ui-sref="showTrip({id: trip.id})" ng-repeat="trip in trips track by $index"></box>
+        <box name="trip.name" ng-click="next()" ui-sref="trips.show({id: trip.id})" ng-repeat="trip in trips track by $index"></box>
     </ul>
 </div>
