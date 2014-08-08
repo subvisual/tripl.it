@@ -22,7 +22,6 @@ angular.module('triplit').config ($stateProvider, $urlRouterProvider) ->
         templateUrl: 'partials/trips/new.html'
       'nav':
         templateUrl: 'partials/trips/new_nav.html'
-        controller: 'NewTripController'
 
   .state 'trips.show',
     url: '/:id'

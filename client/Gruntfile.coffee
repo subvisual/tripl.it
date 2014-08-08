@@ -20,21 +20,6 @@ module.exports = (grunt) ->
         files:
           '<%= dist %>/config.xml': '_config.xml'
 
-    loopback_sdk_angular:
-      services:
-        options:
-          input: '../server/server.js'
-          output: '<%= dist %>/js/lb-services.js'
-
-    replace:
-      loopback:
-        src: '<%= loopback_sdk_angular.services.options.output %>'
-        overwrite: true
-        replacements: [{
-          from: '/api',
-          to: 'http://localhost:3000/api'
-        }]
-
     connect:
       options:
         hostname: 'localhost'
@@ -71,6 +56,11 @@ module.exports = (grunt) ->
       html: '<%= app %>/index.html'
       options:
         dest: '<%= dist %>'
+        flow:
+          html:
+            steps:
+              js: ['concat']
+            post: {}
 
     copy:
       dist:
@@ -97,7 +87,7 @@ module.exports = (grunt) ->
           '<%= app %>/partials/{,*/}*.html',
           '<%= app %>/components/{,*/}*.html'
         ]
-        tasks: ['copy', 'useminPrepare','concat', 'uglify', 'usemin', 'htmlmin']
+        tasks: ['copy', 'useminPrepare','concat', 'usemin', 'htmlmin']
       coffee:
         files: ['<%= app %>/js/{,*/}*.coffee', '<%= app %>/components/{,*/}*.coffee']
         tasks: 'coffee'
@@ -105,7 +95,6 @@ module.exports = (grunt) ->
         files: ['<%= app %>/components/{,*/}*.sass']
         tasks: 'sass'
 
-  grunt.loadNpmTasks 'grunt-loopback-sdk-angular'
   grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-concat'
@@ -121,29 +110,23 @@ module.exports = (grunt) ->
 
 
   grunt.registerTask 'build', [
-    'loopback_sdk_angular'
-    'replace'
     'template'
     'sass'
     'coffee'
     'copy'
     'useminPrepare'
     'concat'
-    'uglify'
     'usemin'
     'htmlmin'
   ]
 
   grunt.registerTask 'server', [
-      'loopback_sdk_angular'
-      'replace'
       'template'
       'sass'
       'coffee'
       'copy'
       'useminPrepare'
       'concat'
-      'uglify'
       'usemin'
       'connect:server'
       'htmlmin'

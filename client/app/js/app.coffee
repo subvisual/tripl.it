@@ -1,14 +1,13 @@
-app = angular.module 'triplit', ['ui.router', 'ngAnimate', 'lbServices']
+app = angular.module 'triplit', ['ui.router', 'ngAnimate', 'pouchdb']
 
 app.controller 'TripsController', ($scope, Trip) ->
-  Trip.query (trips) ->
-    $scope.trips = trips
+  $scope.trips = Trip
 
-app.controller 'NewTripController', ($scope, $state, TripForm) ->
-  $scope.trip = TripForm
+app.controller 'NewTripController', ($scope, $state, Trip) ->
+  $scope.trip = {}
   $scope.submit = ->
-    debugger
-    TripForm.submit()
+    Trip.post
+      name: $scope.trip.name
 
 app.controller 'ShowTripController', ($scope, $stateParams, Trip) ->
   $scope.startedDescription = 'Trip started'
@@ -16,11 +15,9 @@ app.controller 'ShowTripController', ($scope, $stateParams, Trip) ->
     $scope.trip = trip
 
 app.controller 'NewExpenseController', ($scope, $stateParams, Trip) ->
-  Trip.get {id: $stateParams.id}, (trip) ->
-    debugger
   $scope.expense = {}
   $scope.submit = =>
-    Trip({id: $stateParams.id}).expenses.create({description: $scope.expense.description, value: 0, trip_id: $stateParams.id})
+      debugger
 
 app.run ($rootScope, $window) ->
   $rootScope.slide = ''
