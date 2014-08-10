@@ -11,28 +11,22 @@ app.controller 'NewTripController', ($scope, $state, Trip) ->
 
 app.controller 'ShowTripController', ($scope, $stateParams, Trip) ->
   $scope.startedDescription = 'Trip started'
-  Trip.get {id: $stateParams.id}, (trip) ->
+  Trip.get $stateParams.id, (err, trip) ->
     $scope.trip = trip
+    $scope.$apply()
 
 app.controller 'NewExpenseController', ($scope, $stateParams, Trip) ->
-  $scope.expense = {}
-  $scope.submit = =>
-      debugger
+  Trip.get $stateParams.id, (err, trip) ->
+    $scope.expense = {}
+    $scope.submit = =>
+      trip.expenses = [] if !trip.expenses
+      trip.expenses.push $scope.expense
+      Trip.put trip
 
 app.run ($rootScope, $window) ->
   $rootScope.slide = ''
   $rootScope.$on '$stateChangeStart', () ->
     $rootScope.back = ->
-      console.log 'back'
       $rootScope.slide = 'slide-right'
     $rootScope.next = () ->
-      console.log 'next'
       $rootScope.slide = 'slide-left'
-
-app.directive "linked", () ->
-  return {
-    link: (scope, element, attrs) ->
-      id = attrs["linked"]
-      element.on "click", () ->
-        document.getElementById(id).click()
-  }
