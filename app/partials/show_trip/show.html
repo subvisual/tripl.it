@@ -1,0 +1,13 @@
+<section ng-controller="ShowTripController">
+    <trip-heading value="3">{{trip.name}}</trip-heading>
+    <ul class="BoxList BoxList--timeline">
+        <box-image name="expense.description" ng-repeat="expense in trip.expenses track by $index"></box-image>
+        <box-image class="Box--alt" name="startedDescription"></box-image>
+    </ul>
+</section>
+
+<section class="ActionBar u-fixedBottom">
+    <a class="IconFriends"></a>
+    <a class="IconAddExpense" ng-click="next()" ui-sref="trips.show.expenses.new"></a>
+    <div class="IconReport"></div>
+</section>

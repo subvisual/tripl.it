@@ -1,0 +1,7 @@
+<h1>New Expense</h1>
+
+<form novalidate ng-submit="submit()" ng-controller="NewExpenseController">
+    <input type="text" ng-model="expense.description" />
+    <input type="number" ng-model="expense.value" />
+    <input type="submit" id="expense-submit" />
+</form>

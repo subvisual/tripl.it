@@ -1,6 +1,6 @@
 node_modules
 npm-debug.log
-client/.tmp
-client/www
-client/build
-client/app/lib/
+.tmp
+www
+build
+app/lib/

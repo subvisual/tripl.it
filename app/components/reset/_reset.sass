@@ -1,0 +1,16 @@
+*, *:before, *:after
+  +box-sizing(border-box)
+  vertical-align: top
+  padding: 0
+  margin: 0
+
+*:focus
+  outline: 0
+
+input
+  border-radius: 0
+
+html, body
+  @include user-select(none)
+  overflow: hidden
+  width: 100%
