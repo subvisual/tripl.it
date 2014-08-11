@@ -1,7 +1,9 @@
-<h1 class="Heading">Trips</h1>
+<page>
+    <h1 class="Heading">Trips</h1>
 
-<div ng-controller="TripsController">
-    <ul class="BoxList">
-        <box name="trip.name" ng-click="next()" ui-sref="trips.show({id: trip._id})" pouch-repeat="trip in trips"></box>
-    </ul>
-</div>
+    <div ng-controller="TripsController">
+        <ul class="BoxList">
+            <box name="trip.name" ng-click="next()" ui-sref="trips.show({id: trip._id})" pouch-repeat="trip in trips"></box>
+        </ul>
+    </div>
+</page>
