@@ -15,3 +15,13 @@ angular.module('triplit').directive 'boxImage', () ->
     scope:
       description: '=name'
   }
+
+angular.module('triplit').directive 'boxImageExtra', () ->
+  return {
+    restrict: 'E'
+    replace: true
+    templateUrl: 'components/box/box_image_extra.html'
+    scope:
+      description: '=name'
+      value: '=value'
+  }

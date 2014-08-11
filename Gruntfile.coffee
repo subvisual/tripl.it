@@ -67,7 +67,7 @@ module.exports = (grunt) ->
         files: [{
           expand: true
           cwd: '<%= app %>/'
-          src: ['index.html', 'partials/*.html', 'partials/*/*.html', 'components/*/*.html', 'img/*']
+          src: ['index.html', 'partials/*.html', 'partials/*/*.html', 'components/*/*.{html,woff,ttf}', 'img/*']
           dest: '<%= dist %>/'
         },{
           expand: true

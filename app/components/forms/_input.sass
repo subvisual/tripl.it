@@ -3,5 +3,26 @@
 input[type="text"], .TextInput
   width: 100%
   border: 0
-  border-bottom: 1px solid black
-  padding-bottom: $input-bottom-space
+  border-bottom: 1px solid $light-blue
+  padding: 0 $input-space $input-space $input-space
+
+input
+  &::-webkit-input-placeholder
+    font-weight: 300
+    font-style: italic
+    color: $light-blue
+
+  &:-moz-placeholder
+    font-weight: 300
+    font-style: italic
+    color: $light-blue
+
+  &::-moz-placeholder
+    font-weight: 300
+    font-style: italic
+    color: $light-blue
+
+  &:-ms-input-placeholder
+    font-weight: 300
+    font-style: italic
+    color: $light-blue

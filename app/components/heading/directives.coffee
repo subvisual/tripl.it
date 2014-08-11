@@ -1,8 +1,9 @@
-angular.module('triplit').directive 'tripHeading', ->
+angular.module('triplit').directive 'headingAlpha', ->
   return {
     restrict: 'E'
     transclude: true
-    templateUrl: 'components/heading/trip_heading.html'
+    replace: true
+    templateUrl: 'components/heading/heading_alpha.html'
     scope:
       value: '@value'
   }

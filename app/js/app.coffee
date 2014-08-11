@@ -15,13 +15,15 @@ app.controller 'ShowTripController', ($scope, $stateParams, Trip) ->
     $scope.trip = trip
     $scope.$apply()
 
-app.controller 'NewExpenseController', ($scope, $stateParams, Trip) ->
+app.controller 'NewExpenseController', ($scope, $rootScope, $stateParams, $state, Trip) ->
   Trip.get $stateParams.id, (err, trip) ->
+    $rootScope.back()
     $scope.expense = {}
     $scope.submit = =>
       trip.expenses = [] if !trip.expenses
       trip.expenses.push $scope.expense
       Trip.put trip
+      $state.go('trips.show')
 
 app.run ($rootScope, $window) ->
   $rootScope.slide = ''
