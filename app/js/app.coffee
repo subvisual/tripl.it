@@ -12,6 +12,10 @@ app.controller 'NewTripController', ($scope, $state, Trip) ->
 app.controller 'ShowTripController', ($scope, $stateParams, Trip) ->
   $scope.startedDescription = 'Trip started'
   Trip.get $stateParams.id, (err, trip) ->
+    $scope.total = _.reduce trip.expenses
+      , (memo, expense) ->
+        memo + expense.value
+      , 0
     $scope.trip = trip
     $scope.$apply()
 

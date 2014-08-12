@@ -1,7 +1,7 @@
 <div page-with-header class="ExpensesPage">
     <section ng-controller="ShowTripController">
         <div class="Page-header">
-            <heading-alpha value="3">{{trip.name}}</heading-alpha>
+            <heading-alpha value="{{total}}">{{trip.name}}</heading-alpha>
         </div>
         <ul class="BoxList BoxList--timeline BoxList--withActionBar">
             <box-image-extra value="expense.value" name="expense.description" ng-repeat="expense in trip.expenses track by $index"></box-image-extra>
