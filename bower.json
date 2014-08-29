@@ -1,0 +1,23 @@
+{
+  "name": "triplit",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-animate": "~1.2.20",
+    "angular-gestures": "~0.2.3",
+    "angular-pouchdb": "~0.1.5",
+    "angular-resource": "~1.2.21",
+    "angular-touch": "~1.2.22",
+    "angular-ui-router": "https://github.com/gabrielpoca/ui-router.git",
+    "underscore": "~1.6.0"
+  }
+}

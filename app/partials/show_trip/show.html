@@ -12,6 +12,6 @@
 
 <section class="ActionBar u-fixedBottom">
     <a class="IconFriends"></a>
-    <a class="IconAddExpense" ng-click="next()" ui-sref="trips.show.expenses.new"></a>
+    <a class="IconAddExpense" ng-click="next('trips.show.expenses.new', {id: $stateParams.id})"></a>
     <div class="IconReport"></div>
 </section>

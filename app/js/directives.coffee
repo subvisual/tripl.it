@@ -1,7 +1,15 @@
-angular.module('triplit').directive "linked", () ->
+angular.module('triplit').directive 'linked', () ->
   return {
     link: (scope, element, attrs) ->
       id = attrs["linked"]
       element.on "click", () ->
         document.getElementById(id).click()
   }
+
+
+#angular.module('triplit').directive 'tap-sref', ($state) ->
+  #return {
+      #restrict: 'A'
+      #link: (scope, element, attrs) ->
+        #uu
+  #}

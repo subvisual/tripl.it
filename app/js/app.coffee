@@ -1,4 +1,4 @@
-app = angular.module 'triplit', ['ui.router', 'ngAnimate', 'pouchdb']
+app = angular.module 'triplit', ['ui.router', 'ngTouch', 'ngAnimate', 'pouchdb']
 
 app.controller 'TripsController', ($scope, Trip) ->
   $scope.trips = Trip
@@ -29,10 +29,22 @@ app.controller 'NewExpenseController', ($scope, $rootScope, $stateParams, $state
       Trip.put trip
       $state.go('trips.show')
 
-app.run ($rootScope, $window) ->
+app.run ($rootScope, $state, $stateParams, $window) ->
+  $rootScope.$state = $state
+  $rootScope.$stateParams = $stateParams
   $rootScope.slide = ''
   $rootScope.$on '$stateChangeStart', () ->
     $rootScope.back = ->
       $rootScope.slide = 'slide-right'
+
+      parameters = arguments
+      $window.setTimeout ->
+          $state.go.apply($state, parameters)
+        , 0
     $rootScope.next = () ->
       $rootScope.slide = 'slide-left'
+
+      parameters = arguments
+      $window.setTimeout ->
+          $state.go.apply($state, parameters)
+        , 0
