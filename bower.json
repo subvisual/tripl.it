@@ -17,7 +17,8 @@
     "angular-pouchdb": "~0.1.5",
     "angular-resource": "~1.2.21",
     "angular-touch": "~1.2.22",
-    "angular-ui-router": "https://github.com/gabrielpoca/ui-router.git",
-    "underscore": "~1.6.0"
+    "underscore": "~1.6.0",
+    "angular-cached-resource": "~1.0.0",
+    "angular-ui-router": "~0.2.11"
   }
 }
