@@ -1,0 +1,22 @@
+@mixin IconBase($image, $size: 60px)
+  display: inline-block
+  background-size: contain
+  background-repeat: no-repeat
+  background-image: url($image)
+  width: $size
+  height: $size
+
+.IconAdd
+  +IconBase('../img/icon-add.png')
+
+.IconBack
+  +IconBase('../img/icon-back.png')
+
+.IconAddExpense
+  +IconBase('../img/icon-addexpense.png', 100px)
+
+.IconFriends
+  +IconBase('../img/icon-friends.png')
+
+.IconReport
+  +IconBase('../img/icon-report.png')

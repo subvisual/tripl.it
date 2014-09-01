@@ -1,0 +1,21 @@
+<template name="nav">
+  <div class="Navigation">
+    <div class="Navigation-item">
+      {{#if previous}}
+      <a href="{{pathFor previous.route}}">
+        <i class="Icon{{previous.icon}}"></i>
+      </a>
+      {{/if}}
+    </div>
+    <div class="Navigation-item">
+      <i class="ImageLogoText"></i>
+    </div>
+    <div class="Navigation-item">
+      {{#if next}}
+      <a href="{{pathFor next.route}}">
+        <i class="Icon{{next.icon}}"></i>
+      </a>
+      {{/if}}
+    </div>
+  </div>
+</template>

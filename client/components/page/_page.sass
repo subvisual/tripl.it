@@ -1,0 +1,21 @@
+$page-header-height: 35px !default
+
+.Page
+  display: block
+  padding-top: $window-top-space
+  padding-left: $window-side-space
+  padding-right: $window-side-space
+
+.Page--withHeader
+  padding-top: $window-top-space + $page-header-height
+
+.Page-header
+  padding: 0 $window-side-space
+  position: fixed
+  top: $navigation-height
+  left: 0
+  padding-top: $space
+  background-color: $background-color
+  z-index: 1
+  width: 100%
+  height: $page-header-height

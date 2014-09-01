@@ -1,0 +1,20 @@
+@import variables
+
+.BoxList
+  max-height: 100%
+  overflow-y: scroll
+  .Box:not(:last-child)
+    margin-bottom: $boxes-spacing
+
+.BoxList.BoxList--timeline
+  .Box
+    position: relative
+  .Box:not(:first-child)
+    &:before
+      content: " "
+      position: absolute
+      background: blue
+      bottom: $box-height / 2 + $box-picture-size / 2
+      height: $boxes-spacing + $box-height - $box-picture-size
+      left: $box-picture-size / 2 + $box-padding - $box-timeline-width / 2
+      width: $box-timeline-width

@@ -1,0 +1,10 @@
+<template name="tripsShow">
+  <div class="Page-header">
+    {{> headingAlpha title=trip.name}}
+  </div>
+  <div class="BoxList">
+    {{#each expenses}}
+    <div class="Box">{{description}}</div>
+    {{/each}}
+  </div>
+</template>
