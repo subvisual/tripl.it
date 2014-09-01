@@ -1,6 +1,6 @@
 <template name="nav">
   <div class="Navigation">
-    <div class="Navigation-item">
+    <div id="navigation-previous" class="Navigation-item">
       {{#if previous}}
       <a href="{{pathFor previous.route}}">
         <i class="Icon{{previous.icon}}"></i>
@@ -10,7 +10,7 @@
     <div class="Navigation-item">
       <i class="ImageLogoText"></i>
     </div>
-    <div class="Navigation-item">
+    <div id="navigation-next" class="Navigation-item">
       {{#if next}}
       <a href="{{pathFor next.route}}">
         <i class="Icon{{next.icon}}"></i>

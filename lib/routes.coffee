@@ -11,6 +11,9 @@ NavRoutes =
     previous:
       icon: 'Back'
       route: 'tripsIndex'
+    next:
+      icon: 'Add'
+      route: false
   tripsShow:
     previous:
       icon: 'Back'
