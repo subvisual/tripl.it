@@ -14,10 +14,6 @@ angular.module('triplit').config ($stateProvider, $urlRouterProvider) ->
         templateUrl: 'partials/trips/index.html'
       'nav@trips':
         templateUrl: 'partials/trips/index_nav.html'
-        #controller: ($scope, $state, $rootScope) ->
-          #$scope.next = () ->
-            #$rootScope.next()
-            #$state.go('trips.new')
 
   .state 'trips.new',
     url: '/new'
