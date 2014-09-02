@@ -1,34 +1,18 @@
-PreviousObservers = []
-NextObservers = []
-
-notifyNextAction = ->
-    _.each PreviousObservers, (f) ->
-        f()
-    PreviousObservers = []
-
-notifyPreviousAction = ->
-    _.each PreviousObservers, (f) ->
-        f()
-    PreviousObservers = []
-
-resetObservers = ->
-    PreviousObservers = []
-    NextObservers = []
-
-@subscribeToNextAction = (f) ->
-    NextObservers.push f
-
-@subscribeToPreviousAction = (f) ->
-    PreviousObservers.push f
-
 Template.nav.events
     'click #navigation-next': ->
-        notifyNextAction()
+        NavigationVent.notifyNext()
 
     'click #navigation-previous': ->
-        notifyPreviousAction()
+        NavigationVent.notifyPrevious()
 
 Template.nav.helpers
+    options: ->
+        options =  {}
+        debugger
+        if @trip._id
+            _.extend(options, {id: @trip._id})
+        return options
+
     next: ->
         getNavigationForRoute(getCurrentRouteName()).next
 

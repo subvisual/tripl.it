@@ -1,7 +1,7 @@
 tripId = null
 
 Template.tripsAdd.created = () ->
-    subscribeToPreviousAction(_.bind(Template.tripsAdd.cancel, this))
+    NavigationVent.subscribeToPrevious(_.bind(Template.tripsAdd.cancel, this))
 
 Template.tripsAdd.cancel = ->
     if tripId

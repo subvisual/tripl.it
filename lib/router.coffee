@@ -1,6 +1,9 @@
 Router.configure
   layoutTemplate: 'layout'
 
+Router.onBeforeAction ->
+  NavigationVent.reset()
+
 Router.map ->
   @route 'tripsIndex',
     path: '/'
@@ -25,3 +28,8 @@ Router.map ->
         trip: Trips.findOne @params._id
         expenses: Expenses.find {tripId: @params._id}
       }
+
+  @route 'expenseNew',
+    path: 'trip/:_id/expenses/new'
+    waitOn: ->
+      Meteor.subscribe 'trip', @params._id

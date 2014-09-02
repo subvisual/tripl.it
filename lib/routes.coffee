@@ -18,6 +18,9 @@ NavRoutes =
     previous:
       icon: 'Back'
       route: 'tripsIndex'
+    next:
+      icon: 'Add'
+      route: 'expenseNew'
 
 @getNavigationForRoute = (route) ->
   data = NavRoutes[route] || {}
