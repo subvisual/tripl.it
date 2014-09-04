@@ -10,6 +10,22 @@
   width: 100%
   display: block
   text-decoration: none
+  position: relative
+  overflow: hidden
+  cursor: pointer
+
+  .Box-description
+    width: 100%
+    display: inline-block
+
+  .Box-options
+    position: absolute
+    right: -60px
+    height: 100%
+    top: 0
+
+.Box-options
+  background: red
 
 .Box.Box--alt
   background: $box-alt-background
@@ -44,3 +60,4 @@
   border-radius: 50%
   height: $box-picture-size
   width: $box-picture-size
+
