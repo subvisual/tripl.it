@@ -20,7 +20,14 @@ NavRoutes =
       route: 'tripsIndex'
     next:
       icon: 'Add'
-      route: 'expenseNew'
+      route: false
+  expenseNew:
+    previous:
+      icon: 'Back'
+      route: false
+    next:
+      icon: 'Add'
+      route: false
 
 @getNavigationForRoute = (route) ->
   data = NavRoutes[route] || {}

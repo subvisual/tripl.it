@@ -2,4 +2,8 @@
 
 Expenses.allow
   insert: (userId, expense) ->
-    return !!expense.tripId && !!expense.description
+    true
+  update: () ->
+    true
+  remove: () ->
+    true
