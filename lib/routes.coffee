@@ -10,10 +10,10 @@ NavRoutes =
   tripsAdd:
     previous:
       icon: 'Back'
-      route: 'tripsIndex'
+      route: false
     next:
       icon: 'Add'
-      route: false
+      route: 'tripsIndex'
   tripsShow:
     previous:
       icon: 'Back'

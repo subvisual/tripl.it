@@ -6,6 +6,7 @@ Template.tripsAdd.created = () ->
 Template.tripsAdd.cancel = ->
     if tripId
         Trips.remove tripId
+        Router.go 'tripsIndex'
 
 Template.tripsAdd.events
     'keyup #trip_name': (e) ->
@@ -15,4 +16,7 @@ Template.tripsAdd.events
         else
             tripId = Trips.insert
                 name: name
-        
+       
+    'submit': (e) ->
+        e.preventDefault()
+        Router.go 'tripsIndex'
