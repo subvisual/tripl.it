@@ -4,9 +4,7 @@
   </div>
   <div class="BoxList BoxList--timeline">
     {{#each expenses}}
-      {{#boxImage}}
-        {{description}}
-      {{/boxImage}}
+      {{> boxSimple description=description image=true}}
     {{/each}}
   </div>
 </template>

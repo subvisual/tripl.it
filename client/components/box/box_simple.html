@@ -1,0 +1,10 @@
+<template name="boxSimple">
+    <a href="{{pathFor path this}}" class="Box {{#if image}}Box--image{{/if}}">
+        <div class="Box-inside">
+            {{#if image}}<div class="Box-image"></div>{{/if}}
+            {{#if description}}<div class="Box-description">{{description}}</div>{{/if}}
+            {{#if extra}}<div class="Box-extra">{{extra}}</div>{{/if}}
+            <div class="Box-options">Remove</div>
+        </div>
+    </a>
+</template>

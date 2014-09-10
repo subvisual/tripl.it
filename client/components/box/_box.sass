@@ -1,27 +1,30 @@
 @import variables
 
 .Box
-  background: $box-background
-  color: $box-color
-  height: $box-height
-  line-height: $box-height
-  padding: 0 $box-padding
-  border-radius: 20px
-  width: 100%
   display: block
-  text-decoration: none
   position: relative
-  cursor: pointer
 
-  .Box-description
+  .Box-inside
+    +white-space-fix
+    background: $box-background
+    border-radius: 20px
+    color: $box-color
+    height: $box-height
+    line-height: $box-height
+    overflow: hidden
+    padding: 0 $box-padding
+    position: relative
     width: 100%
-    display: inline-block
 
-  .Box-options
-    position: absolute
-    right: -60px
-    height: 100%
-    top: 0
+    .Box-description
+      width: 100%
+      display: inline-block
+
+    .Box-options
+      position: absolute
+      right: -60px
+      height: 100%
+      top: 0
 
 .Box-options
   background: red
