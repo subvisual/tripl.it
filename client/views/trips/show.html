@@ -1,10 +1,12 @@
 <template name="tripsShow">
   <div class="Page-header">
-    {{> headingAlpha title=trip.name}}
+    {{#headingAlpha}}{{trip.name}}{{/headingAlpha}}
   </div>
-  <div class="BoxList">
+  <div class="BoxList BoxList--timeline">
     {{#each expenses}}
-      <div class="Box">{{description}}</div>
+      {{#boxImage}}
+        {{description}}
+      {{/boxImage}}
     {{/each}}
   </div>
 </template>
