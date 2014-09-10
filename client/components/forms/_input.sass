@@ -1,12 +1,24 @@
 @import variables
 
-input[type="text"], .TextInput
+.TextInput
   width: 100%
   border: 0
   border: 1px solid $light-blue
   padding: $input-space
 
+
+.TextInput.TextInput--dropdown
+  .TextInput-input
+    display: inline-block
+    width: 70%
+
+  .TextInput-dropdown
+    display: inline-block
+    width: 30%
+
+
 input
+  border: none
   &::-webkit-input-placeholder
     font-weight: 300
     font-style: italic
