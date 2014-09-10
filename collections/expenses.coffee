@@ -1,4 +1,4 @@
-@Expenses = new Meteor.Collection 'expenses'
+@Expenses = new GroundDB 'expenses'
 
 Expenses.allow
   insert: (userId, expense) ->

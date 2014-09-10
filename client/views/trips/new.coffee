@@ -1,22 +1,17 @@
-tripId = null
-
 Template.tripsAdd.created = () ->
-    NavigationVent.subscribeToPrevious(_.bind(Template.tripsAdd.cancel, this))
+  NavigationVent.subscribeToPrevious(_.bind(Template.tripsAdd.cancel, this))
+  NavigationVent.subscribeToNext(_.bind(Template.tripsAdd.submit, this))
 
 Template.tripsAdd.cancel = ->
-    if tripId
-        Trips.remove tripId
-        Router.go 'tripsIndex'
+  Router.go 'tripsIndex'
+
+Template.tripsAdd.submit = ->
+  name = $('#trip_name').val()
+  Trips.insert
+    name: name
+  Router.go('tripsIndex')
 
 Template.tripsAdd.events
-    'keyup #trip_name': (e) ->
-        name = $(e.target).val()
-        if tripId
-            Trips.update {_id: tripId}, {$set: {name: name}}
-        else
-            tripId = Trips.insert
-                name: name
-       
-    'submit': (e) ->
-        e.preventDefault()
-        Router.go 'tripsIndex'
+  'submit': (e) ->
+    e.preventDefault()
+    Template.tripsAdd.submit()

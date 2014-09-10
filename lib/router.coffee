@@ -24,7 +24,7 @@ Router.map ->
         Meteor.subscribe 'expenses', @params._id
       ]
     data: ->
-      data = {
+      {
         trip: Trips.findOne @params._id
         expenses: Expenses.find {tripId: @params._id}
       }
@@ -32,7 +32,4 @@ Router.map ->
   @route 'expenseNew',
     path: 'trip/:_id/expenses/new'
     waitOn: ->
-      [
-        Meteor.subscribe 'trip', @params._id
-        Meteor.subscribe 'expenses', @params._id
-      ]
+      Meteor.subscribe 'trip', @params._id

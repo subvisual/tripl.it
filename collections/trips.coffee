@@ -1,4 +1,4 @@
-@Trips = new Meteor.Collection 'trip'
+@Trips = new GroundDB 'trip'
 
 Trips.allow
   insert: (userId, trip) ->
