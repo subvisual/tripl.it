@@ -4,15 +4,11 @@
     <div class="DropdownInput">
       <div class="DropdownInput-selected">Here</div>
       <ul class="DropdownInput-dropdown">
-        <li data-value="trinta" class="TextInputSelect-option">
-            Random 2
-        </li>
-        <li data-value="trinta" class="TextInputSelect-option">
-            Random 2
-        </li>
-        <li data-value="trinta" class="TextInputSelect-option">
-            Random
-        </li>
+        {{#each this}}
+          <li data-value="value" class="TextInputSelect-option">
+            {{description}}
+          </li>
+        {{/each}}
       </ul>
     </div>
   </div>
