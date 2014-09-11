@@ -1,0 +1,16 @@
+.DropdownInput
+  position: relative
+  background: black
+  color: white
+
+  .DropdownInput-dropdown
+    color: black
+    width: 100%
+    position: absolute
+    top: 100%
+    left: 0
+    display: none
+
+  &:hover, &.is-open
+    .DropdownInput-dropdown
+      display: block
