@@ -29,6 +29,9 @@ Router.map ->
         expenses: Expenses.find {tripId: @params._id}
       }
 
+  @route 'usersNew',
+    path: 'trip/:_id/users/new'
+
   @route 'expenseNew',
     path: 'trip/:_id/expenses/new'
     waitOn: ->

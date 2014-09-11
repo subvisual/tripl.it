@@ -13,7 +13,7 @@ NavRoutes =
       route: false
     next:
       icon: 'Add'
-      route: 'tripsIndex'
+      route: 'usersNew'
   tripsShow:
     previous:
       icon: 'Back'
@@ -21,6 +21,13 @@ NavRoutes =
     next:
       icon: 'Add'
       route: false
+  usersNew:
+    previous:
+      icon: 'Back'
+      route: 'tripsAdd'
+    next:
+      icon: 'Add'
+      route: 'tripsShow'
   expenseNew:
     previous:
       icon: 'Back'
