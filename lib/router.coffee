@@ -32,6 +32,9 @@ Router.map ->
   @route 'usersNew',
     path: 'trip/:_id/users/new'
 
+  @route 'budgetNew',
+    path: 'trip/:_id/budget/new'
+
   @route 'expenseNew',
     path: 'trip/:_id/expenses/new'
     waitOn: ->

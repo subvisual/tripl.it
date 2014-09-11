@@ -9,7 +9,7 @@ Template.usersNew.submit = ->
     _id: userId
     email: email
   Trips.update { _id: getRouterParams()._id }, { $push: { usersId: userId } }
-  Router.go 'tripsShow', { _id: getRouterParams()._id }
+  Router.go 'budgetNew', { _id: getRouterParams()._id }
 
 Template.usersNew.cancel = ->
   Router.go 'tripsAdd'

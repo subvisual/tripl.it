@@ -27,6 +27,13 @@ NavRoutes =
       route: 'tripsAdd'
     next:
       icon: 'Add'
+      route: 'budgetNew'
+  budgetNew:
+    previous:
+      icon: 'Back'
+      route: 'usersNew'
+    next:
+      icon: 'Add'
       route: 'tripsShow'
   expenseNew:
     previous:

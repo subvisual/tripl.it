@@ -1,0 +1,13 @@
+<template name="budgetNew">
+  {{#headingAlpha}}Define dudget &amp; currency{{/headingAlpha}}
+  <p>Specify your personal budget and the currency</p>
+  <form>
+    <input id="budget_amount" type="number" name="amount" placeholder="Amount you plan to spend" class="TextInput">
+    <select id="budget_currency" name="currency">
+      <option value="EUR">€ Euros</option>
+      <option value="$US">$ US Dollars</option>
+      <option value="GBP">£ Pound Sterling</option>
+    </select>
+    <input type="submit" class="u-displayNone">
+  </form>
+</template>
