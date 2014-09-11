@@ -1,7 +1,16 @@
 <template name="lab">
   <h1>Tripl.it Lab</h1>
 
-  <input type="text" class="TextInput" placeholder="Input of type text">
+  <div class="Form">
+    <input type="text" class="TextInput" placeholder="Input of type text">
 
-  {{> inputSelect dropdownData}}
+    <div class="Grid">
+      <div class="Column--70 Column">
+        <input type="text" class="TextInput" placeholder="Input of type text">
+      </div>
+      <div class="Column Column--30">
+        {{> dropdownInput dropdownData}}
+      </div>
+    </div>
+  </div>
 </template>

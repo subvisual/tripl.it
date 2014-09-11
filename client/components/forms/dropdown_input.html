@@ -1,0 +1,17 @@
+<template name="dropdownInput">
+    <div class="DropdownInput">
+      <div class="DropdownInput-selected">Here</div>
+      <ul class="DropdownInput-dropdown">
+        {{#each this}}
+            <li data-value="{{value}}" class="DropdownInput-option">
+                {{description}}
+            </li>
+        {{/each}}
+      </ul>
+      <select class="u-displayNone">
+          {{#each this}}
+            <option value="{{value}}">{{description}}</option>
+          {{/each}}
+      </select>
+    </div>
+</template>
