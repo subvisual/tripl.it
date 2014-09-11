@@ -33,3 +33,6 @@ Router.map ->
     path: 'trip/:_id/expenses/new'
     waitOn: ->
       Meteor.subscribe 'trip', @params._id
+
+  @route 'lab',
+    path: 'lab'
