@@ -1,8 +1,18 @@
 Router.configure
   layoutTemplate: 'layout'
 
-Router.onBeforeAction ->
-  NavigationVent.reset()
+beforeHooks = {
+
+  isLoggedIn: ->
+    if !Meteor.userId()
+      Router.go 'signIn'
+
+  resetNavigationVent: ->
+    NavigationVent.reset()
+}
+
+Router.onBeforeAction(beforeHooks.resetNavigationVent)
+Router.onBeforeAction(beforeHooks.isLoggedIn, { except: [ 'signIn', 'signUp' ] })
 
 Router.map ->
   @route 'tripsIndex',
@@ -31,6 +41,15 @@ Router.map ->
 
   @route 'usersNew',
     path: 'trip/:_id/users/new'
+
+  @route 'signUp',
+    path: 'signUp'
+
+  @route 'signIn',
+    path: 'signIn'
+
+  @route 'signOut',
+    path: 'signOut'
 
   @route 'budgetNew',
     path: 'trip/:_id/budget/new'
