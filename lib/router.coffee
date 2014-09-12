@@ -1,8 +1,16 @@
 Router.configure
   layoutTemplate: 'layout'
 
-Router.onBeforeAction ->
-  NavigationVent.reset()
+beforeHooks =
+  isLoggedIn: ->
+    if !Meteor.userId()
+      Router.go 'signIn'
+
+  resetNavigationVent: ->
+    NavigationVent.reset()
+
+Router.onBeforeAction(beforeHooks.resetNavigationVent)
+Router.onBeforeAction(beforeHooks.isLoggedIn, { except: [ 'signIn', 'signUp' ] })
 
 Router.map ->
   @route 'tripsIndex',
@@ -31,6 +39,19 @@ Router.map ->
 
   @route 'usersNew',
     path: 'trip/:_id/users/new'
+    waitOn: ->
+      Meteor.subscribe 'users'
+
+  @route 'signUp',
+    path: 'sign_up'
+
+  @route 'signIn',
+    path: 'sign_in'
+
+  @route 'signOut',
+    path: 'sign_out'
+    action: ->
+      Meteor.logout()
 
   @route 'budgetNew',
     path: 'trip/:_id/budget/new'
