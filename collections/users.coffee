@@ -2,29 +2,29 @@ Meteor.methods
   assignUserToTrip: (email, tripId) ->
     return if !email || !tripId
 
-    user = findUser(email)
+    user = findUserByEmail(email)
 
     if !user
-      createUserWithNoPassword(email)
+      createUnenrolledUser(email)
       user = findUser(email)
 
-    debugger
+    insertIntoTrip(user.id, tripId)
 
-    Trips.update
-      _id: tripId
-      ,
-        $push:
-          users:
-            id: user._id
-
-
-findUser = (email) ->
+findUserByEmail = (email) ->
   return Meteor.users.findOne
     emails:
       $elemMatch:
         address: email
 
-createUserWithNoPassword = (email) ->
+createUnenrolledUser = (email) ->
   Accounts.createUser
     email: email
     password: Meteor.uuid()
+
+insertIntoTrip = (userId, tripId) ->
+  Trips.update
+  _id: tripId
+  ,
+  $push:
+    users:
+      id: userId
