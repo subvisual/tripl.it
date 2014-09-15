@@ -3,3 +3,6 @@ Template.tripsShow.created = () ->
 
 Template.tripsShow.addExpense = ->
     Router.go 'expenseNew', {_id: Router.current().params._id}
+
+Template.tripsShow.findUserName = (id) ->
+    return Meteor.users.findOne({ _id: id})

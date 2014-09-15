@@ -41,6 +41,8 @@ Router.map ->
 
   @route 'usersNew',
     path: 'trip/:_id/users/new'
+    waitOn: ->
+      Meteor.subscribe 'users'
 
   @route 'signUp',
     path: 'signUp'
