@@ -3,11 +3,15 @@ Template.dropdownInput.rendered = ->
   @selectedContainer = $(@$('.DropdownInput-selected'))
 
 Template.dropdownInput.events
+  'change select': (e, template) ->
+    template.selectedContainer.text($(e.target).find(':selected').text())
+
+  'click .DropdownInput-selected': (e, template) ->
+    if Meteor.Device.isPhone()
+      template.select.trigger('click')
+
   'click .DropdownInput-option': (e, template) ->
     id = $(e.target).data('value')
-    text = $(e.target).text()
 
     template.select.val(id)
-    template.selectedContainer.data('value', id)
-    template.selectedContainer.text(text)
-
+    template.select.change()
