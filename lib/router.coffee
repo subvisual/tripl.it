@@ -45,13 +45,15 @@ Router.map ->
       Meteor.subscribe 'users'
 
   @route 'signUp',
-    path: 'signUp'
+    path: 'sign_up'
 
   @route 'signIn',
-    path: 'signIn'
+    path: 'sign_in'
 
   @route 'signOut',
-    path: 'signOut'
+    path: 'sign_out'
+    action: ->
+      Meteor.logout()
 
   @route 'budgetNew',
     path: 'trip/:_id/budget/new'
