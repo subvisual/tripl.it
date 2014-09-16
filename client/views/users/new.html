@@ -1,8 +1,8 @@
 <template name="usersNew">
-  {{#headingAlpha}}Who's going with you?{{/headingAlpha}}
-  <p>Select the friends that will join you</p>
+  {{#headingAlpha}} {{i18n 'users.new.heading'}} {{/headingAlpha}}
+  <p>{{i18n 'trips.new.descripton'}}</p>
   <form>
-    <input id="user_email" type="email" name="email" placeholder="Type their names" class="TextInput">
+    <input id="user_email" type="email" name="email" placeholder={{i18n 'users.new.namePlaceholder'}} class="TextInput">
     <input type="submit" class="u-displayNone">
   </form>
 </template>
