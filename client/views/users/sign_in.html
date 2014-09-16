@@ -2,8 +2,8 @@
   {{#headingAlpha}}SignIn{{/headingAlpha}}
   <p>SingIn</p>
   <form>
-      <input id='email' type='email' name='email' placeholder='Type your email here...' class='TextInput'>
-      <input id='password' type='password' name='password' placeholder='Type your password here...' class='TextInput'>
+    <input {{emailAttributes}} id='email' class='TextInput'>
+    <input {{passwordAttributes}} id='password' class='TextInput'>
     <input type='submit' class='u-displayNone'>
   </form>
 </template>
