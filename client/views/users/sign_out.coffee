@@ -1,2 +1,2 @@
-Template.signOut.created = ()  ->
+Template.signOut.created =  ->
   Meteor.logout()
