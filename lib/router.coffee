@@ -1,15 +1,13 @@
 Router.configure
   layoutTemplate: 'layout'
 
-beforeHooks = {
-
+beforeHooks =
   isLoggedIn: ->
     if !Meteor.userId()
       Router.go 'signIn'
 
   resetNavigationVent: ->
     NavigationVent.reset()
-}
 
 Router.onBeforeAction(beforeHooks.resetNavigationVent)
 Router.onBeforeAction(beforeHooks.isLoggedIn, { except: [ 'signIn', 'signUp' ] })

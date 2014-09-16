@@ -1,4 +1,4 @@
-Template.signIn.submit = () ->
+Template.signIn.submit = ->
   email = $('#email').val()
   password = $('#password').val()
   Meteor.loginWithPassword(email, password, (err) ->
