@@ -1,9 +1,9 @@
 <template name="budgetNew">
-  {{#headingAlpha}}Define dudget &amp; currency{{/headingAlpha}}
-  <p>Specify your personal budget and the currency</p>
+  {{#headingAlpha}} {{i18n 'trips.budget.new.heading'}} {{/headingAlpha}}
+  <p>{{i18n 'trips.budget.new.descripton'}}</p>
   <form>
     <div class="TextInput TextInput--dropdown">
-      <input id="budget_amount" type="number" name="amount" placeholder="Amount you plan to spend" class="TextInput-input">
+      <input id="budget_amount" type="number" name="amount" placeholder={{i18n 'trips.budget.new.amountPlaceholder'}} class="TextInput-input">
       <select id="budget_currency" name="currency" class="TextInput-dropdown">
         <option value="EUR">€ Euros</option>
         <option value="$US">$ US Dollars</option>

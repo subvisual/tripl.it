@@ -1,5 +1,6 @@
 accounts-base@1.1.0-rc0
 accounts-password@1.0.1
+anti:i18n@0.4.3
 application-configuration@1.0.2-rc0
 autoupdate@1.0.7-cordova6
 binary-heap@1.0.0
