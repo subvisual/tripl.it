@@ -1,6 +1,20 @@
 <template name="headingAlpha">
     <div class="HeadingAlpha">
         <h1 class="HeadingAlpha-title">{{> UI.contentBlock}}</h1>
-        <div class="HeadingAlpha-extra">{{this.extra}}</div>
+        <div class="HeadingAlpha-extra">
+            <div class="HeadingAlpha-label">Budget</div>
+            <div>
+                <div class="HeadingAlpha-price">
+                    {{total}} €
+                    /
+                </div>
+                <div class="HeadingAlpha-price is-current">
+                    {{current}} €
+                </div>
+            </div>
+        </div>
+        <div class="HeadingAlpha-progressBar">
+            {{> progressBar percentage=percentage }}
+        </div>
     </div>
 </template>

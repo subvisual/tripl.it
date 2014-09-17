@@ -1,17 +1,54 @@
+$heading-alpha-height: 60px
+$heading-alpha-price-height: $font-size * 1.6
+$heading-alpha-progress-height: 5px
+
 .Heading
   font-size: 2rem
 
 .HeadingAlpha
+  +white-space-fix
+
+  background: $black
+  color: $white
+  height: $heading-alpha-height
+  padding: 0 $space
+  position: relative
+
   .HeadingAlpha-title,
   .HeadingAlpha-extra
-    display: inline-block
-    vertical-align: bottom
+    height: 100%
 
   .HeadingAlpha-title
-    font-size: 1.5rem
-    color: $blue
-    width: 70%
+    width: 100%
+    font-size: 2.2rem
+    line-height: $heading-alpha-height
+
   .HeadingAlpha-extra
-    color: black
-    width: 30%
-    text-align: right
+    position: absolute
+    right: $space
+    top: 0
+    padding: (($heading-alpha-height - $heading-alpha-price-height * 2) / 2) 0
+
+  .HeadingAlpha-price
+    display: inline
+
+  .HeadingAlpha-progressBar
+    position: absolute
+    right: 0
+    bottom: -$heading-alpha-progress-height
+    height: $heading-alpha-progress-height
+    width: 100%
+
+.HeadingAlpha-label
+  line-height: $heading-alpha-price-height
+  color: $white
+  font-style: italic
+
+.HeadingAlpha-price
+  color: $white
+  font-weight: bold
+  line-height: $heading-alpha-price-height
+
+.HeadingAlpha-price.is-current
+  font-size: 1.2rem
+  color: $blue

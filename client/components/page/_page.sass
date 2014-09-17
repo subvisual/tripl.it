@@ -1,4 +1,4 @@
-$page-header-height: 55px
+$page-header-height: $heading-alpha-height
 $window-top-space: $navigation-height + $space
 $window-side-space: $space
 
@@ -8,16 +8,14 @@ $window-side-space: $space
   padding-left: $window-side-space
   padding-right: $window-side-space
 
-.Page--withHeader
+.Page.Page--withHeader
   padding-top: $window-top-space + $page-header-height
 
 .Page-header
-  padding: 0 $window-side-space
   position: fixed
   top: $navigation-height
   left: 0
-  padding-top: $space
   background-color: $background-color
-  z-index: 1
+  z-index: 3
   width: 100%
   height: $page-header-height

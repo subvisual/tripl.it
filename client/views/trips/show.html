@@ -1,6 +1,6 @@
 <template name="tripsShow">
   <div class="Page-header">
-    {{#headingAlpha}}{{trip.name}}{{/headingAlpha}}
+    {{#headingAlpha current="300" total="500"}}{{trip.name}}{{/headingAlpha}}
   </div>
   <div class="BoxList BoxList--timeline">
     {{#each expenses}}
