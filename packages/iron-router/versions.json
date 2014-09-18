@@ -58,7 +58,7 @@
     ],
     [
       "htmljs",
-      "1.0.0-cordova1"
+      "1.0.1"
     ],
     [
       "id-map",
@@ -86,7 +86,7 @@
     ],
     [
       "logging",
-      "1.0.2-cordova2"
+      "1.0.3"
     ],
     [
       "meteor",
@@ -130,7 +130,7 @@
     ],
     [
       "routepolicy",
-      "1.0.0-cordova1"
+      "1.0.1"
     ],
     [
       "spacebars",
@@ -162,10 +162,10 @@
     ],
     [
       "webapp-hashing",
-      "1.0.0-cordova1"
+      "1.0.0"
     ]
   ],
   "pluginDependencies": [],
-  "toolVersion": "meteor-tool@1.0.29",
+  "toolVersion": "meteor-tool@1.0.31",
   "format": "1.0"
 }
