@@ -1,6 +1,7 @@
 <template name="expenseNew">
   <form>
-    <input id="expense_description" type="text" name="description" placeholder="Supermarket" class="TextInput">
+    <input id="expense_value" type="number" name="expense_value" placeholder="30" class="TextInput">
+    {{> radioGroup name="expense_category" list=categories}}
     <input type="submit" class="u-displayNone">
   </form>
 </template>

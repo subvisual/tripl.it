@@ -1,5 +1,5 @@
 <template name="boxSimple">
-    <a href="{{pathFor path this}}" class="Box {{#if image}}Box--image{{/if}}">
+    <a href="{{path}}" class="Box {{#if image}}Box--image{{/if}} {{#if extra}}Box--extra{{/if}}">
         <div class="Box-inside">
             {{#if image}}<div class="Box-image"></div>{{/if}}
             {{#if description}}<div class="Box-description">{{description}}</div>{{/if}}

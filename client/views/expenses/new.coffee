@@ -3,10 +3,14 @@ Template.expenseNew.created = () ->
   NavigationVent.subscribeToNext(_.bind(Template.expenseNew.submit, this))
 
 Template.expenseNew.submit = ->
-  description = $('#expense_description').val()
+  value = parseInt($('input[name="expense_value"]').val())
+  categoryId = $('input[name="expense_category"]:checked').val()
+
   Expenses.insert
-    description: description
+    category: Categories.findById(categoryId)
     tripId: getRouterParams()._id
+    value: value
+
   Router.go 'tripsShow', { _id: getRouterParams()._id }
 
 Template.expenseNew.cancel = ->

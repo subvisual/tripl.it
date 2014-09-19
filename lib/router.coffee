@@ -18,7 +18,9 @@ Router.map ->
     waitOn: ->
       Meteor.subscribe 'trips'
     data: ->
-      Trips.find()
+      Trips.find {}, transform: (doc) ->
+        doc['path'] = Router.path('tripsShow', { _id: doc._id })
+        return doc
 
   @route 'tripsAdd',
     path: 'trips/new'
@@ -32,10 +34,12 @@ Router.map ->
         Meteor.subscribe 'expenses', @params._id
       ]
     data: ->
-      {
-        trip: Trips.findOne @params._id
-        expenses: Expenses.find {tripId: @params._id}
-      }
+      return Trips.findOne @params._id, transform: (trip) ->
+          trip['expenses'] = Expenses.find {tripId: trip._id}
+          trip['currentBudget'] = 0
+          trip['expenses'].map (expense) ->
+            trip['currentBudget'] += parseInt(expense.value)
+          return trip
 
   @route 'usersNew',
     path: 'trip/:_id/users/new'

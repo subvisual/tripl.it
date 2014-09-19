@@ -1,15 +1,7 @@
 <template name="radioGroup">
   <div class="RadioGroup">
-    {{#each this}}
-      <div class="RadioButton">
-        <input type="radio" name="expenseType" class="RadioButton-input" id="{{id}}" value="{{value}}">
-        <label for="{{id}}" class="RadioButton-label ">
-          <div class="RadioButton-labelInside">
-            <div>{{description}}</div>
-            <img src="{{image}}">
-          </div>
-        </label>
-      </div>
+    {{#each list}}
+      {{> radioButton }}
     {{/each}}
   </div>
 </template>

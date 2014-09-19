@@ -1,13 +1,13 @@
 Template.nav.events
-    'click #navigation-next': ->
-        NavigationVent.notifyNext()
+  'click #navigation-next': ->
+    NavigationVent.notifyNext()
 
-    'click #navigation-previous': ->
-        NavigationVent.notifyPrevious()
+  'click #navigation-previous': ->
+    NavigationVent.notifyPrevious()
 
 Template.nav.helpers
-    next: ->
-        getNavigationForRoute(getCurrentRouteName()).next
+  next: ->
+    getNavigationForRoute().next
 
-    previous: ->
-        getNavigationForRoute(getCurrentRouteName()).previous
+  previous: ->
+    getNavigationForRoute().previous

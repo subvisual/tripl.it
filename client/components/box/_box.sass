@@ -36,13 +36,12 @@
 .Box.Box--image
   .Box-image
     transform: translateY(-50%)
-    display: inline-block
-    position: relative
+    position: absolute
     top: 50%
 
   .Box-description
     width: calc(100% - #{$box-picture-size + $space})
-    margin-left: $space
+    margin-left: $space + $box-picture-size
     display: inline-block
 
 .Box.Box--image.Box--extra
@@ -50,9 +49,7 @@
     display: inline-block
 
   .Box-description
-    width: calc('100% - #{$box-picture-size + $box-extra-size + $space}')
-    margin-left: $space
-    display: inline-block
+    width: calc(100% - #{$box-picture-size + $box-extra-size + $space})
 
 .Box-extra
   width: $box-extra-size
