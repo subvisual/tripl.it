@@ -1,9 +1,10 @@
 <template name='signIn'>
-  {{#headingAlpha}} {{i18n 'signIn.heading'}} {{/headingAlpha}}
   <p>{{i18n 'signIn.descripton'}}</p>
   <form>
     <input id='email' type='email' name='email' placeholder={{i18n 'signIn.emailPlaceholder'}} class='TextInput'>
     <input id='password' type='password' name='password' placeholder={{i18n 'signIn.passwordPlaceholder'}} class='TextInput'>
     <input type='submit' class='u-displayNone'>
   </form>
+
+  <a href="{{pathFor 'signUp'}}">Sign Up</a>
 </template>

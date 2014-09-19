@@ -16,3 +16,7 @@ Template.expenseNew.events
   'submit': (e) ->
     e.preventDefault()
     Template.expenseNew.submit()
+
+Template.expenseNew.helpers
+  categories: ->
+    Categories.all()
