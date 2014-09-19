@@ -10,6 +10,7 @@ noorderstorm:hammer
 raix:grounddb
 wolves:bourbon
 accounts-password
-iron:router
 anti:i18n
 mystor:device-detection
+iron-router
+
