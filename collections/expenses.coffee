@@ -1,4 +1,6 @@
-@Expenses = new GroundDB 'expenses'
+@Expenses = new Mongo.Collection 'expenses'
+
+new GroundDB(Expenses)
 
 Expenses.allow
   insert: (userId, expense) ->

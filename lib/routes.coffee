@@ -51,6 +51,10 @@ defaultNavigation =
       icon: 'Add'
       route: false
 
+  signIn: ->
+    previous: false
+    next: false
+
   lab: ->
     previous: false
     next: false

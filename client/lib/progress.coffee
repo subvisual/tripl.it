@@ -7,7 +7,7 @@ $.fn.progress = ->
     step: ->
       pct = ''
       if (percentage == 0)
-        pct = Math.floor(@countNum) '%'
+        pct = Math.floor(@countNum) + '%'
       else
         pct = Math.floor(@countNum + 1) + '%'
       progress.css('width', pct)
