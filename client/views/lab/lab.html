@@ -1,19 +1,37 @@
 <template name="lab">
-  <h1>Tripl.it Lab</h1>
+  <section class="LabPage">
+    <h1 class="LabPage-title">Tripl.it Lab</h1>
 
-  <div class="Form">
-    <input type="text" class="TextInput" placeholder="Input of type text">
+    <div class="Section">
+      <div class="Section-title">Text and number inputs</div>
+      <input type="text" class="TextInput" placeholder="Input of type text">
 
-    <div class="Grid">
-      <div class="Column--70 Column">
-        <input type="text" class="TextInput" placeholder="Input of type text">
-      </div>
-      <div class="Column Column--30">
-        {{> dropdownInput list=currencies selected=selectedCurrency}}
+      <div class="Grid">
+        <div class="Column--70 Column">
+          <input type="text" class="TextInput" placeholder="Input of type text">
+        </div>
+        <div class="Column Column--30">
+          {{> dropdownInput list=currencies selected=selectedCurrency}}
+        </div>
       </div>
     </div>
-    {{> checkbox name="checkbox"}}
-    {{> radioGroup name="random" list=radioGroupData}}
-  </div>
-  {{#headingAlpha current="300" total="500"}}Rubyconf PT{{/headingAlpha}}
+
+    <div class="Section">
+      <div class="Section-title">Checkbox</div>
+      {{> checkbox name="checkbox"}}
+      {{> checkbox name="checkbox2"}}
+      {{> checkbox name="checkbox3"}}
+    </div>
+
+
+    <div class="Section">
+      <div class="Section-title">Radio Group</div>
+      {{> radioGroup name="random" list=categories}}
+    </div>
+
+    <div class="Section">
+      <div class="Section-title">Heading Alpha</div>
+      {{#headingAlpha current="300" total="500"}}Rubyconf PT{{/headingAlpha}}
+    </div>
+  </section>
 </template>

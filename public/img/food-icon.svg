@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="40px" height="27px" viewBox="0 0 40 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.4 (8053) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="New-Expense" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Artboard-3" sketch:type="MSArtboardGroup" transform="translate(-359.000000, -207.000000)">
+            <g id="Group" sketch:type="MSLayerGroup" transform="translate(359.000000, 207.000000)">
+                <path d="M19.5539773,0 C2.18181818,0 2.18181818,12 2.18181818,12 L37.8181818,12 C37.8181818,12 36.9261364,0 19.5539773,0 Z" id="Rectangle-124" fill="#F6D14F" sketch:type="MSShapeGroup"></path>
+                <path d="M36.7797411,24.2882286 C36.3865411,23.261431 35.207375,22.1958508 34.136598,21.9345875 C34.136598,21.9345875 28.7478513,20.25 19.5539773,20.25 C10.1901184,20.25 5.13171508,21.9695747 5.13171508,21.9695747 C4.06607679,22.2604281 3.00546518,23.3645872 2.76058384,24.4454443 L2.18181818,27 L37.8181818,27 L36.7797411,24.2882286 Z" id="Rectangle-123" fill="#DBAF18" sketch:type="MSShapeGroup" transform="translate(20.000000, 23.625000) rotate(-180.000000) translate(-20.000000, -23.625000) "></path>
+                <rect id="Rectangle-125" fill="#7AD852" sketch:type="MSShapeGroup" x="2.29474432" y="18.75" width="35.4105114" height="1.5"></rect>
+                <rect id="Rectangle-126" fill="#E04242" sketch:type="MSShapeGroup" x="2.29474432" y="12" width="35.4105114" height="1.5"></rect>
+                <rect id="Rectangle-127" fill="#AD6B05" sketch:type="MSShapeGroup" x="0" y="15" width="40" height="3.75" rx="35"></rect>
+                <path d="M2.29474432,13.5 L2.29474432,15 L10.8212341,15 L14.9881543,17.25 L18.1599595,15 L37.7052557,15 L37.7052557,13.5 L2.29474432,13.5 Z" id="Rectangle-128" fill="#FBFF3E" sketch:type="MSShapeGroup"></path>
+                <ellipse id="Oval-125" fill="#FFF833" sketch:type="MSShapeGroup" cx="8.72727273" cy="6" rx="0.727272727" ry="0.75"></ellipse>
+                <ellipse id="Oval-126" fill="#FFF833" sketch:type="MSShapeGroup" cx="12.3636364" cy="3.75" rx="0.727272727" ry="0.75"></ellipse>
+                <ellipse id="Oval-127" fill="#FFF833" sketch:type="MSShapeGroup" cx="25.4545455" cy="6.75" rx="0.727272727" ry="0.75"></ellipse>
+                <ellipse id="Oval-128" fill="#FFF833" sketch:type="MSShapeGroup" cx="32.7272727" cy="6.75" rx="0.727272727" ry="0.75"></ellipse>
+                <ellipse id="Oval-129" fill="#FFF833" sketch:type="MSShapeGroup" cx="15.2727273" cy="7.5" rx="0.727272727" ry="0.75"></ellipse>
+                <ellipse id="Oval-130" fill="#FFF833" sketch:type="MSShapeGroup" cx="22.5454545" cy="3.75" rx="0.727272727" ry="0.75"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>

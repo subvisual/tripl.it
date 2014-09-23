@@ -51,6 +51,10 @@ defaultNavigation =
       icon: 'Add'
       route: false
 
+  lab: ->
+    previous: false
+    next: false
+
 parseNavigationParams = (params) ->
   if _.isFunction(params)
     params = params()
