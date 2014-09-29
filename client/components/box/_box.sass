@@ -15,19 +15,31 @@
     padding: 0 $box-padding
     position: relative
     width: 100%
+    -webkit-mask-image: -webkit-radial-gradient(circle, white, black)
 
-    .Box-description
-      width: 100%
-      display: inline-block
+  .Box-description
+    width: 100%
+    display: inline-block
 
-    .Box-options
-      position: absolute
-      right: -60px
-      height: 100%
-      top: 0
+  .Box-menu
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+  .Box-options
+    height: 100%
+    width: 100%
+    position: absolute
+    height: 100%
+    top: 0
+    left: 100%
+    z-index: 1
 
 .Box-options
   background: red
+  color: white
 
 .Box.Box--alt
   background: $box-alt-background
