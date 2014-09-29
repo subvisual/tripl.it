@@ -7,10 +7,10 @@ standard-app-packages
 coffeescript
 fourseven:scss
 noorderstorm:hammer
-wolves:bourbon
 accounts-password
 anti:i18n
 mystor:device-detection
 iron:router
 ground:db
+wolves:bourbon
 

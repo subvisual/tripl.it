@@ -16,12 +16,10 @@ Template.signIn.helpers
 Template.signIn.submit = ->
   email = $('#email').val()
   password = $('#password').val()
-  Meteor.loginWithPassword(email, password, (err) ->
-    if err
-      console.log(err)
-    else
+  Meteor.loginWithPassword email, password, (err) ->
+    if !err
+      registerPushNotificationService()
       Router.go 'tripsIndex'
-  )
 
 Template.signIn.events
   'submit': (e) ->

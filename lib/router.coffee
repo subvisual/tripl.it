@@ -10,7 +10,7 @@ beforeHooks =
     NavigationVent.reset()
 
 Router.onBeforeAction(beforeHooks.resetNavigationVent)
-Router.onBeforeAction(beforeHooks.isLoggedIn, { except: [ 'signIn', 'signUp' ] })
+Router.onBeforeAction(beforeHooks.isLoggedIn, { except: [ 'signIn', 'signUp', 'lab' ] })
 
 Router.map ->
   @route 'tripsIndex',
