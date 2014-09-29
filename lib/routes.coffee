@@ -55,6 +55,10 @@ defaultNavigation =
     previous: false
     next: false
 
+  signUp: ->
+    previous: false
+    next: false
+
   lab: ->
     previous: false
     next: false

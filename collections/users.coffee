@@ -1,3 +1,9 @@
+Meteor.users.allow
+  update: ->
+    true
+  insert: ->
+    true
+
 Meteor.methods
   assignUserToTrip: (email, tripId) ->
     return if !email || !tripId
@@ -9,6 +15,15 @@ Meteor.methods
       user = findUser(email)
 
     insertIntoTrip(user.id, tripId)
+
+  insertPushNotificationsKey: (regId) ->
+    console.log regId
+    Meteor.users.update
+      _id: Meteor.userId()
+    ,
+      $set:
+        profile:
+          notificationsRegId: regId
 
 findUserByEmail = (email) ->
   return Meteor.users.findOne
