@@ -11,6 +11,7 @@ Template.tripsAdd.submit = ->
   Trips.insert
     _id: tripId
     name: name
+  Meteor.call('assignLogedUserToTrip', tripId)
   Router.go 'usersNew', { _id: tripId }
 
 Template.tripsAdd.events
