@@ -18,6 +18,3 @@ Template.lab.helpers
 
     categories: ->
       Categories.all()
-
-    onNotification: ->
-      onNotification()
