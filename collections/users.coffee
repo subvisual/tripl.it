@@ -1,8 +1,7 @@
 Meteor.users.allow
-  update: ->
-    true
-  insert: ->
-    true
+  update: (userId) ->
+    if this.userId == userId
+      true
 
 Meteor.methods
   assignUserToTrip: (email, tripId) ->
@@ -17,7 +16,6 @@ Meteor.methods
     insertIntoTrip(user.id, tripId)
 
   insertPushNotificationsKey: (regId) ->
-    console.log regId
     Meteor.users.update
       _id: Meteor.userId()
     ,
