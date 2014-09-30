@@ -1,7 +1,4 @@
 <template name="tripsShow">
-  <div class="Page-header">
-    {{#headingAlpha current=currentBudget total="500"}}{{name}}{{/headingAlpha}}
-  </div>
   <div class="BoxList BoxList--timeline">
     {{#each expenses}}
       {{> box description=category.description image=true extra=value}}

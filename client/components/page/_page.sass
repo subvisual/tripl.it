@@ -1,21 +1,6 @@
-$page-header-height: $heading-alpha-height
-$window-top-space: $navigation-height + $space
-$window-side-space: $space
+$window-space: $space
 
 .Page
   display: block
-  padding-top: $window-top-space
-  padding-left: $window-side-space
-  padding-right: $window-side-space
-
-.Page.Page--withHeader
-  padding-top: $window-top-space + $page-header-height
-
-.Page-header
-  position: fixed
-  top: $navigation-height
-  left: 0
-  background-color: $background-color
-  z-index: 3
-  width: 100%
-  height: $page-header-height
+  padding: $window-space
+  padding-bottom: 88px

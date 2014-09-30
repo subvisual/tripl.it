@@ -1,0 +1,19 @@
+.u-makeHeader
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+
+.u-makeContent,
+.u-makeContentWithHeader
+  position: absolute
+  top: $navigation-height
+  left: 0
+  width: 100%
+  height: calc(100% - #{$navigation-height})
+  overflow: scroll
+  -webkit-overflow-scrolling: touch
+
+.u-makeContentWithHeader
+  top: $navigation-height + $heading-alpha-height
+  height: calc(100% - #{$navigation-height + $heading-alpha-height})
