@@ -1,7 +1,6 @@
 Meteor.users.allow
   update: (userId) ->
-    if this.userId == userId
-      true
+    return this.userId == userId
 
 Meteor.methods
   assignUserToTrip: (email, tripId) ->

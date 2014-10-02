@@ -1,5 +1,9 @@
 androidPlatforms = ['android', 'Android', 'amazon-fireos']
 
 @DeviceHelpers =
+  isCordova: ->
+    return window.device != undefined
+
   isAndroid: ->
-    _.contains(androidPlatforms, device.platform)
+    if DeviceHelpers.isCordova()
+      _.contains(androidPlatforms, device.platform)
