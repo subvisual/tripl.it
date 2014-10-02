@@ -10,7 +10,8 @@ androidRegister = ->
 
 isAndroid = ->
   platform = device.platform
-  if platform is 'android' or platform is 'Android' or platform is 'amazon-fireos'
+  androidPlatforms = ['android', 'Android', 'amazon-fireos']
+  if androidPlatforms.indexOf platform > -1
     true
 
 successHandler = (result) ->
