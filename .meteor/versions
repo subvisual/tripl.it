@@ -21,9 +21,9 @@ fastclick@1.0.0
 follower-livedata@1.0.1
 fourseven:scss@0.9.5
 geojson-utils@1.0.0
-ground:db@0.0.7
+ground:db@0.0.9
 ground:dictionary@0.0.1
-ground:localstorage@0.0.1
+ground:localstorage@0.0.2
 ground:minimax@0.0.2
 ground:servertime@0.0.0
 ground:store@0.0.0
@@ -35,7 +35,7 @@ id-map@1.0.0
 iron:core@0.3.4
 iron:dynamic-template@0.4.1
 iron:layout@0.4.1
-iron:router@0.9.3
+iron:router@0.9.4
 jquery@1.0.0
 json@1.0.0
 livedata@1.0.10
