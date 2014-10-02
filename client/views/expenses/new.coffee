@@ -5,12 +5,12 @@ Template.expenseNew.created = () ->
 Template.expenseNew.submit = ->
   value = parseInt($('input[name="expense_value"]').val())
   categoryId = $('input[name="expense_category"]:checked').val()
-
-  Expenses.insert
+  params =
     category: Categories.findById(categoryId)
     tripId: getRouterParams()._id
     value: value
 
+  Meteor.call('createExpense', params)
   Router.go 'tripsShow', { _id: getRouterParams()._id }
 
 Template.expenseNew.cancel = ->

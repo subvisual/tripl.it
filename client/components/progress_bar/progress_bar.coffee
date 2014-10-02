@@ -1,2 +1,5 @@
 Template.progressBar.rendered = ->
-    $(this.find('.ProgressBar')).progress()
+  self = this
+  self.autorun ->
+    data = Template.currentData()
+    $(self.find('.ProgressBar')).progress()

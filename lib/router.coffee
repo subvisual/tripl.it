@@ -36,9 +36,6 @@ Router.map ->
     data: ->
       return Trips.findOne @params._id, transform: (trip) ->
           trip['expenses'] = Expenses.find {tripId: trip._id}
-          trip['currentBudget'] = 0
-          trip['expenses'].map (expense) ->
-            trip['currentBudget'] += parseInt(expense.value)
           return trip
 
   @route 'usersNew',
