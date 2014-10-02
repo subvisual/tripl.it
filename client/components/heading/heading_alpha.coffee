@@ -1,5 +1,5 @@
 Template.headingAlpha.helpers
-    percentage: ->
-        total = parseInt @total
-        current = parseInt @current
-        current / total * 100
+  percentage: ->
+    total = parseInt @total
+    current = parseInt @current
+    current / total * 100

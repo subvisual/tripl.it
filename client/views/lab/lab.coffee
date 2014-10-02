@@ -7,14 +7,14 @@ currencies = [
 selectedCurrency = null
 
 Template.lab.helpers
-    currencies: ->
-        currencies
+  currencies: ->
+    currencies
 
-    selectedCurrency: ->
-        selectedCurrency || currencies[0]
+  selectedCurrency: ->
+    selectedCurrency || currencies[0]
 
-    dropdownData: ->
-        [{value: 1, description: 'Random'}, {value: 2, description: 'Random 2'}]
+  dropdownData: ->
+    [{value: 1, description: 'Random'}, {value: 2, description: 'Random 2'}]
 
-    categories: ->
-      Categories.all()
+  categories: ->
+    Categories.all()

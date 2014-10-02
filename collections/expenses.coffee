@@ -24,4 +24,5 @@ Meteor.methods
     expense = Expenses.findOne(expenseId)
     Expenses.remove {_id: expenseId}, (err) ->
       if !err
-        Trips.update {_id: expense.tripId}, {$inc: {currentBudget: expense.value * -1}}
+        Trips.update {_id: expense.tripId},
+          $inc: {currentBudget: expense.value * -1}
