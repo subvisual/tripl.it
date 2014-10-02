@@ -1,8 +1,8 @@
 @registerPushNotificationService = ->
   if isAndroid()
-    androidPushNotificationRegister()
+    androidRegister()
 
-androidPushNotificationRegister = ->
+androidRegister = ->
   pushNotification = window.plugins.pushNotification
   pushNotification.register successHandler, errorHandler,
     senderID: "664229378667"
