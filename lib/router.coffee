@@ -9,8 +9,9 @@ beforeHooks =
   resetNavigationVent: ->
     NavigationVent.reset()
 
-Router.onBeforeAction(beforeHooks.resetNavigationVent)
-Router.onBeforeAction(beforeHooks.isLoggedIn, { except: [ 'signIn', 'signUp', 'lab' ] })
+Router.onBeforeAction beforeHooks.resetNavigationVent
+Router.onBeforeAction beforeHooks.isLoggedIn,
+  except: [ 'signIn', 'signUp', 'lab' ]
 
 Router.map ->
   @route 'tripsIndex',
@@ -35,11 +36,8 @@ Router.map ->
       ]
     data: ->
       return Trips.findOne @params._id, transform: (trip) ->
-          trip['expenses'] = Expenses.find {tripId: trip._id}
-          trip['currentBudget'] = 0
-          trip['expenses'].map (expense) ->
-            trip['currentBudget'] += parseInt(expense.value)
-          return trip
+        trip['expenses'] = Expenses.find {tripId: trip._id}
+        return trip
 
   @route 'usersNew',
     path: 'trip/:_id/users/new'

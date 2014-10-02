@@ -1,2 +1,2 @@
 Meteor.startup ->
-    $('body').hammer()
+  $('body').hammer()
