@@ -1,7 +1,7 @@
 <template name="box">
     <div class="Box {{#if image}}Box--image{{/if}} {{#if extra}}Box--extra{{/if}}">
         <div class="Box-inside">
-          {{#if image}}<div class="Box-image"></div>{{/if}}
+          {{#if image}}<div class="Box-image" style="background-image: url({{image}})"></div>{{/if}}
           {{#if description}}<div class="Box-description">{{description}}</div>{{/if}}
           {{#if extra}}<div class="Box-extra">{{extra}}</div>{{/if}}
           <div class="Box-menu">

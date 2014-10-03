@@ -1,7 +1,7 @@
 <template name="tripsShow">
   <div class="BoxList BoxList--timeline">
     {{#each expenses}}
-      {{> boxExpense id=_id description=category.description image=true extra=value}}
+      {{> boxExpense id=_id description=category.description image=category.image extra=value}}
     {{/each}}
   </div>
 </template>
