@@ -23,4 +23,6 @@ Template.expenseNew.events
 
 Template.expenseNew.helpers
   categories: ->
-    Categories.all()
+    return _.map Categories.all(), (category) ->
+      upperCase = "#{category.value[0].toUpperCase()}#{category.value.slice(1)}"
+      return _.extend({class: "Icon#{upperCase}"}, _.omit(category, 'image'))

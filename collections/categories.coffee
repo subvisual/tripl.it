@@ -1,33 +1,27 @@
 categories = [
   {
-    value: 'snacks'
-    description: 'Snacks',
-    image: '/img/payback-icon.svg'
+    value: 'payback'
+    description: 'Payback'
   },
   {
     value: 'food'
-    description: 'Food',
-    image: '/img/food-icon.svg'
+    description: 'Food'
   },
   {
     value: 'drinks'
-    description: 'Drinks',
-    image: '/img/drink-icon.svg'
+    description: 'Drinks'
   },
   {
     value: 'housing'
-    description: 'Housing',
-    image: '/img/housing-icon.svg'
+    description: 'Housing'
   },
   {
     value: 'gas'
-    description: 'Gas',
-    image: '/img/gas-icon.svg'
+    description: 'Gas'
   },
   {
     value: 'other'
-    description: 'Other',
-    image: '/img/other-icon.svg'
+    description: 'Other'
   }
 ]
 
