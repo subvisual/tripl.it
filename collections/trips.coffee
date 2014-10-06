@@ -9,3 +9,10 @@ Trips.allow
     true
   remove: () ->
     true
+
+Meteor.methods
+  createTrip: (name, tripId) ->
+    Trips.insert
+      _id: tripId
+      name: name
+    Meteor.call('assignLogedUserToTrip', tripId)
