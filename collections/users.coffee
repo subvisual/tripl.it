@@ -5,22 +5,17 @@ Meteor.users.allow
 Meteor.methods
   assignUserToTrip: (email, tripId) ->
     return if !email || !tripId
-
-    user = findUserByEmail(email)
-
-    if !user
-      createUnenrolledUser(email)
-      user = findUser(email)
-
-    insertIntoTrip(user.id, tripId)
+    assignUserToTrip(email, tripId)
 
   insertPushNotificationsKey: (regId) ->
-    Meteor.users.update
-      _id: Meteor.userId()
-    ,
+    Meteor.users.update { _id: Meteor.userId() },
       $set:
         profile:
           notificationsRegId: regId
+
+assignUserToTrip = (email, tripId) ->
+  Trips.update { _id: tripId },
+    $push: { users: { email: email }}
 
 findUserByEmail = (email) ->
   return Meteor.users.findOne
@@ -32,11 +27,3 @@ createUnenrolledUser = (email) ->
   Accounts.createUser
     email: email
     password: Meteor.uuid()
-
-insertIntoTrip = (userId, tripId) ->
-  Trips.update
-  _id: tripId
-  ,
-  $push:
-    users:
-      id: userId

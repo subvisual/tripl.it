@@ -31,7 +31,7 @@ Router.map ->
     path: 'trip/:_id'
     waitOn: ->
       return [
-        Meteor.subscribe 'trip', @params._id
+        Meteor.subscribe 'trips'
         Meteor.subscribe 'expenses', @params._id
       ]
     data: ->

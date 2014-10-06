@@ -1,11 +1,9 @@
 Meteor.publish 'trips', ->
-  Trips.find({})
-
-Meteor.publish 'trip', (id) ->
-  Trips.find({ _id: id })
+  email = Meteor.users.findOne(@userId).emails[0].address
+  Trips.find({users: {email: email}})
 
 Meteor.publish 'expenses', (tripId) ->
-  Expenses.find({ tripId: tripId})
+  Expenses.find({ tripId: tripId })
 
 Meteor.publish 'users', ->
   Meteor.users.find()
