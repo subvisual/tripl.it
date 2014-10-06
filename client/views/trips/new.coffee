@@ -8,9 +8,7 @@ Template.tripsAdd.cancel = ->
 Template.tripsAdd.submit = ->
   tripId = Random.id()
   name = $('#trip_name').val()
-  Trips.insert
-    _id: tripId
-    name: name
+  Meteor.call('createTrip', name, tripId)
   Router.go 'usersNew', { _id: tripId }
 
 Template.tripsAdd.events
