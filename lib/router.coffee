@@ -59,7 +59,9 @@ Router.map ->
   @route 'expenseNew',
     path: 'trip/:_id/expenses/new'
     waitOn: ->
-      Meteor.subscribe 'trip', @params._id
+      Meteor.subscribe 'trips'
+    data: ->
+      return Trips.findOne({_id: @params._id})
 
   @route 'lab',
     path: 'lab'

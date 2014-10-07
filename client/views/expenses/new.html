@@ -2,6 +2,11 @@
   <form>
     <input id="expense_value" type="number" name="expense_value" placeholder="30" class="TextInput">
     {{> radioGroup name="expense_category" list=categories}}
+    <select name="expense_paying">
+      {{#each users}}
+        <option>{{email}}</option>
+      {{/each}}
+    </select>
     <input type="submit" class="u-displayNone">
   </form>
 </template>
