@@ -19,7 +19,7 @@ Router.map ->
     waitOn: ->
       Meteor.subscribe 'trips'
     data: ->
-      Trips.find {}, transform: (doc) ->
+      Trips.find {}, {sort: {createdAt: -1}}, transform: (doc) ->
         doc['path'] = Router.path('tripsShow', { _id: doc._id })
         return doc
 
@@ -36,7 +36,7 @@ Router.map ->
       ]
     data: ->
       return Trips.findOne @params._id, transform: (trip) ->
-        trip['expenses'] = Expenses.find {tripId: trip._id}
+        trip['expenses'] = Expenses.find {tripId: trip._id}, {sort: {createdAt: -1}}
         return trip
 
   @route 'usersNew',

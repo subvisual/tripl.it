@@ -1,5 +1,8 @@
 @Expenses = new Mongo.Collection 'expenses'
 
+Expenses.before.insert (userId, doc) ->
+  doc.createdAt = new Date
+
 new GroundDB(Expenses)
 
 Expenses.allow
