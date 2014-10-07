@@ -19,9 +19,7 @@ Router.map ->
     waitOn: ->
       Meteor.subscribe 'trips'
     data: ->
-      Trips.find {}, {sort: {createdAt: -1}}, transform: (doc) ->
-        doc['path'] = Router.path('tripsShow', { _id: doc._id })
-        return doc
+      Trips.find {}, {sort: {createdAt: -1}}
 
   @route 'tripsAdd',
     path: 'trips/new'
