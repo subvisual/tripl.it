@@ -1,6 +1,6 @@
 <template name="dropdownInput">
   <div class="DropdownInput">
-    <div class="DropdownInput-selected">{{selected.description}}</div>
+    <div class="DropdownInput-selected" name="dropdown_selected">{{selected.description}}</div>
     {{#if isPhone}}
       {{> dropdownInputMobile}}
     {{else}}

@@ -1,7 +1,7 @@
 <template name="layoutWithHeader">
   <div class="u-makeHeader">
     {{> nav}}
-    {{#headingAlpha current=currentBudget total="500"}}{{name}}{{/headingAlpha}}
+    {{#headingAlpha current=currentBudget total=budgetAmount}}{{name}}{{/headingAlpha}}
   </div>
   <div class="u-makeContentWithHeader Page">
     {{> yield}}
