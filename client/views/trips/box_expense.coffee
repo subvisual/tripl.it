@@ -7,6 +7,7 @@ Template.boxExpense.events
 Template.boxExpense.helpers
   arguments: ->
     return {
+      id: @_id
       extra: @value
       icon: "Icon#{camelize(@category.value)}"
       description: "#{@user} payed #{@category.description}"
