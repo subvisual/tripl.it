@@ -20,12 +20,7 @@ defaultNavigation =
     previous:
       icon: 'Back'
       route: 'tripsIndex'
-    next: ->
-      id = getRouterParams()._id
-      return {
-        route: Router.path('expenseNew', { _id: id })
-        icon: 'Add'
-      }
+    next: false
 
   usersNew: ->
     previous:

@@ -3,20 +3,16 @@ $action-bar-background-color: $background-color
 $action-bar-height: 100px !default
 
 .ActionBar
-  display: flex
-  flex-wrap: nowrap
-  align-items: baseline
-  justify-content: space-between
+  +display(flex)
+  +flex-wrap(nowrap)
+  +align-items(baseline)
+  +justify-content(space-between)
 
   width: 100%
   height: $action-bar-height
 
   background-color: $action-bar-background-color
-  padding: $space / 2 0
+  padding: $space / 2 $space
 
   [class^="Icon"]
-    &:first-child
-      margin-left: $space
-    &:last-child
-      margin-right: $space
-    
+    max-height: 100%
