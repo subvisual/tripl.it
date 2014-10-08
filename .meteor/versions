@@ -1,6 +1,7 @@
 accounts-base@1.1.1
 accounts-password@1.0.2
 anti:i18n@0.4.3
+appcache@1.0.1
 application-configuration@1.0.2
 autoupdate@1.1.1
 base64@1.0.0
