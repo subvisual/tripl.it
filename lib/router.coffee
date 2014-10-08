@@ -13,11 +13,13 @@ Router.onBeforeAction beforeHooks.resetNavigationVent
 Router.onBeforeAction beforeHooks.isLoggedIn,
   except: [ 'signIn', 'signUp', 'lab' ]
 
+if Meteor.isClient
+  Meteor.subscribe 'trips'
+  Meteor.subscribe 'expenses'
+
 Router.map ->
   @route 'tripsIndex',
     path: '/'
-    waitOn: ->
-      Meteor.subscribe 'trips'
     data: ->
       Trips.find {}, {sort: {createdAt: -1}}
 
@@ -27,11 +29,6 @@ Router.map ->
   @route 'tripsShow',
     layoutTemplate: 'layoutWithHeader'
     path: 'trip/:_id'
-    waitOn: ->
-      return [
-        Meteor.subscribe 'trips'
-        Meteor.subscribe 'expenses', @params._id
-      ]
     data: ->
       return Trips.findOne @params._id, transform: (trip) ->
         trip['expenses'] = Expenses.find {tripId: trip._id}, {sort: {createdAt: -1}}
@@ -39,8 +36,6 @@ Router.map ->
 
   @route 'usersNew',
     path: 'trip/:_id/users/new'
-    waitOn: ->
-      Meteor.subscribe 'users'
 
   @route 'signUp',
     path: 'sign_up'
@@ -58,8 +53,6 @@ Router.map ->
 
   @route 'expenseNew',
     path: 'trip/:_id/expenses/new'
-    waitOn: ->
-      Meteor.subscribe 'trips'
     data: ->
       return Trips.findOne({_id: @params._id})
 
