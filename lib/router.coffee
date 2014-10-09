@@ -14,8 +14,12 @@ Router.onBeforeAction beforeHooks.isLoggedIn,
   except: [ 'signIn', 'signUp', 'lab' ]
 
 if Meteor.isClient
-  Meteor.subscribe 'trips'
-  Meteor.subscribe 'expenses'
+  subscribed = false
+  Tracker.autorun () ->
+    if Meteor.user() && !subscribed
+      Meteor.subscribe 'trips'
+      Meteor.subscribe 'expenses'
+      subscribed = true
 
 Router.map ->
   @route 'tripsIndex',

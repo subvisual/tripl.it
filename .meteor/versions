@@ -22,9 +22,9 @@ fastclick@1.0.0
 follower-livedata@1.0.1
 fourseven:scss@0.9.5
 geojson-utils@1.0.0
-ground:db@0.0.9
+ground:db@0.0.7
 ground:dictionary@0.0.1
-ground:localstorage@0.0.2
+ground:localstorage@0.0.1
 ground:minimax@0.0.2
 ground:servertime@0.0.0
 ground:store@0.0.0
