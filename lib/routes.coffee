@@ -11,7 +11,7 @@ defaultNavigation =
   tripsAdd: ->
     previous:
       icon: 'Back'
-      route: false
+      route: 'tripsIndex'
     next:
       icon: 'Add'
       route: 'usersNew'
@@ -73,4 +73,3 @@ parseNavigationParams = (params) ->
   map.previous = parseNavigationParams(map.previous)
 
   return map
-

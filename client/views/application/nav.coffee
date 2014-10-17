@@ -1,8 +1,8 @@
 Template.nav.events
-  'click #navigation-next': ->
+  'tap #navigation-next': ->
     NavigationVent.notifyNext()
 
-  'click #navigation-previous': ->
+  'tap #navigation-previous': ->
     NavigationVent.notifyPrevious()
 
 Template.nav.helpers
