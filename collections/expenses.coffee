@@ -1,4 +1,4 @@
-@Expenses = new Mongo.Collection 'expenses'
+@Expenses = new Meteor.Collection 'expenses'
 
 Expenses.before.insert (userId, doc) ->
   doc.createdAt = new Date

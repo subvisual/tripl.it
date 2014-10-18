@@ -1,4 +1,4 @@
-@Trips = new Mongo.Collection 'trips'
+@Trips = new Meteor.Collection 'trips'
 
 Trips.before.insert (userId, doc) ->
   doc.createdAt = new Date
