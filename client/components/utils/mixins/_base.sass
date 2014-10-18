@@ -1,0 +1,40 @@
+$prefix-for-webkit:    true !default
+$prefix-for-mozilla:   true !default
+$prefix-for-microsoft: true !default
+$prefix-for-opera:     true !default
+$prefix-for-spec:      true !default
+
+@mixin prefixer ($property, $value, $prefixes)
+  @each $prefix in $prefixes
+    @if $prefix == webkit
+      @if $prefix-for-webkit
+        -webkit-#{$property}: $value
+    @else if $prefix == moz
+      @if $prefix-for-mozilla
+        -moz-#{$property}: $value
+    @else if $prefix == ms
+      @if $prefix-for-microsoft
+        -ms-#{$property}: $value
+    @else if $prefix == o
+      @if $prefix-for-opera
+        -o-#{$property}: $value
+    @else if $prefix == spec
+      @if $prefix-for-spec
+        #{$property}: $value
+    @else
+      @warn "Unrecognized prefix: #{$prefix}"
+
+@mixin transform($property: none)
+  @include prefixer(transform, $property, webkit moz ms o spec)
+
+@mixin display($property: none)
+  @include prefixer(display, $property, webkit moz ms o spec)
+
+@mixin flex-wrap($property: none)
+  @include prefixer(flex-wrap, $property, webkit moz ms o spec)
+
+@mixin align-items($property: none)
+  @include prefixer(align-items, $property, webkit moz ms o spec)
+
+@mixin justify-content($property: none)
+  @include prefixer(justify-content, $property, webkit moz ms o spec)

@@ -20,7 +20,7 @@ ejson@1.0.4
 email@1.0.4
 fastclick@1.0.1
 follower-livedata@1.0.2
-fourseven:scss@0.9.6
+fourseven:scss@1.0.0
 geojson-utils@1.0.1
 ground:db@0.0.9
 ground:dictionary@0.0.1
@@ -68,6 +68,7 @@ spacebars-compiler@1.0.3
 spacebars@1.0.3
 srp@1.0.1
 standard-app-packages@1.0.3
+stevezhu:sass@1.2.2
 templating@1.0.8
 tracker@1.0.3
 ui@1.0.4
@@ -75,4 +76,4 @@ underscore@1.0.1
 url@1.0.1
 webapp-hashing@1.0.1
 webapp@1.1.3
-wolves:bourbon@0.7.0
+wolves:bourbon@0.6.1
