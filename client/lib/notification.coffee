@@ -4,7 +4,7 @@ enableNotifications = ->
 Meteor.startup ->
   if !!Notification
     if Notification.permission == 'granted'
-      enableNotification()
+      enableNotifications()
     else if Notification.permission == 'default'
       requestNotification = ->
         window.removeEventListener 'click', requestNotification
