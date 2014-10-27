@@ -30,6 +30,12 @@ defaultNavigation =
       icon: 'Add'
       route: 'budgetNew'
 
+  usersIndex: ->
+    previous: false
+    next:
+      icon: 'Add'
+      route: 'usersNew'
+
   budgetNew: ->
     previous:
       icon: 'Back'
