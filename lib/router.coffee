@@ -17,6 +17,7 @@ if Meteor.isClient
   subscribed = false
   Tracker.autorun () ->
     if Meteor.user() && !subscribed
+      Meteor.subscribe 'users'
       Meteor.subscribe 'trips'
       Meteor.subscribe 'expenses'
       Meteor.subscribe 'notifications'
