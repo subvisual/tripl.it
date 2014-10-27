@@ -10,5 +10,8 @@ Meteor.publish 'expenses', ->
 Meteor.publish 'users', ->
   Meteor.users.find()
 
+Meteor.publish 'notifications', ->
+  Notifications.find({ email: getEmailAddress(@userId) })
+
 getEmailAddress = (userId) ->
   return Meteor.users.findOne(userId).emails[0].address

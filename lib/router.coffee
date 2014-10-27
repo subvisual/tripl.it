@@ -19,6 +19,7 @@ if Meteor.isClient
     if Meteor.user() && !subscribed
       Meteor.subscribe 'trips'
       Meteor.subscribe 'expenses'
+      Meteor.subscribe 'notifications'
       subscribed = true
 
 Router.map ->

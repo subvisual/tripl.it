@@ -1,3 +1,12 @@
+customMethods =
+  findByEmail: (email) ->
+    return this.findOne
+      emails:
+        $elemMatch:
+          address: email
+
+_.extend Meteor.users, customMethods
+
 Meteor.users.allow
   update: (userId) ->
     return this.userId == userId
@@ -5,25 +14,8 @@ Meteor.users.allow
 Meteor.methods
   assignUserToTrip: (email, tripId) ->
     return if !email || !tripId
-    assignUserToTrip(email, tripId)
+    new AssignToTrip(email, tripId).call()
 
   insertPushNotificationsKey: (regId) ->
-    Meteor.users.update { _id: Meteor.userId() },
-      $set:
-        profile:
-          notificationsRegId: regId
-
-assignUserToTrip = (email, tripId) ->
-  Trips.update { _id: tripId },
-    $push: { users: { email: email }}
-
-findUserByEmail = (email) ->
-  return Meteor.users.findOne
-    emails:
-      $elemMatch:
-        address: email
-
-createUnenrolledUser = (email) ->
-  Accounts.createUser
-    email: email
-    password: Meteor.uuid()
+    return if !regId
+    new AddNotificationsKey(regId).call()

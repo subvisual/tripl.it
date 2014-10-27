@@ -12,7 +12,7 @@ Notifications.allow
 
 Meteor.methods
   createNotification: (body, userId) ->
-    Notifications.insert {body: body, userId: userId}
+    new CreateNotification(body, userId).call()
 
   makeNotificationRead: (id) ->
-    Notifications.update {_id: id}, {read: true}
+    new MakeNotificationRead(id).call()

@@ -16,16 +16,8 @@ Expenses.allow
 Meteor.methods
   createExpense: (params) ->
     return if !params.tripId || !params.category || !params.value
-
-    Expenses.insert params, (err, id) ->
-      if !err
-        Trips.update {_id: params.tripId}, {$inc: {currentBudget: params.value}}
+    new CreateExpense(params).call()
 
   removeExpense: (expenseId) ->
     return if !expenseId
-
-    expense = Expenses.findOne(expenseId)
-    Expenses.remove {_id: expenseId}, (err) ->
-      if !err
-        Trips.update {_id: expense.tripId},
-          $inc: {currentBudget: expense.value * -1}
+    new RemoveExpense(expenseId).call()
