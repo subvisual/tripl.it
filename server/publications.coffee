@@ -3,7 +3,7 @@ Meteor.publish 'trips', ->
 
 Meteor.publish 'expenses', ->
   userEmail = getEmailAddress(@userId)
-  emails = _.map Trips.find({ 'users.email' : userEmail }).fetch(), (trip) ->
+  trips = _.map Trips.find({ 'users.email' : userEmail }).fetch(), (trip) ->
     return trip._id
   Expenses.find { tripId: { $in: trips }}
 
