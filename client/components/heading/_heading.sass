@@ -1,9 +1,15 @@
+$heading-height: 40px
+
 $heading-alpha-height: 60px
 $heading-alpha-price-height: $font-size * 1.6
 $heading-alpha-progress-height: 5px
 
 .Heading
-  font-size: 2rem
+  font-size: 1.5rem
+  color: $blue
+  border-bottom: 1px solid $blue
+  height: 40px
+  line-height: 40px
 
 .HeadingAlpha
   +white-space-fix
@@ -13,6 +19,7 @@ $heading-alpha-progress-height: 5px
   height: $heading-alpha-height
   padding: 0 $space
   position: relative
+  z-index: 3
 
   .HeadingAlpha-title,
   .HeadingAlpha-extra

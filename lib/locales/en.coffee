@@ -1,25 +1,27 @@
 i18n.map "en",
   trips:
     trips: "Trips"
+
     new:
       heading: "New Trip"
       descripton: "Pick a name for your trip"
       namePlaceholder: "Trip to RubyconfPT"
 
     budget:
-      new:
-        heading: "Define budget & currency"
-        descripton: "Specify your personal budget and the currency"
-        amountPlaceholder: "Amount you plan to spend"
+      heading: "Define budget & currency"
+      amountPlaceholder: "Amount you plan to spend"
 
   users:
     new:
       heading: "Who's going with you?"
-      descripton: "Select the friends that will join you"
       namePlaceholder: "Type their names"
+    index:
+      heading: 'Friends with you'
 
   expenses:
     expenseNamePlaceholder: "Supermarket"
+    new:
+      heading: 'Add Expense'
 
   signUp:
     heading: "Sign Up"

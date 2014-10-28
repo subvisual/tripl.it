@@ -1,8 +1,9 @@
 <template name="layout">
   <div class="u-makeHeader">
     {{> nav}}
+    <div class="Heading">{{name}}</div>
   </div>
-  <div class="u-makeContent Page">
+  <div class="u-makeContentWithHeading Page">
     {{> yield}}
   </div>
 </template>

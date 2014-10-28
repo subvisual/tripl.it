@@ -27,10 +27,17 @@ Router.map ->
   @route 'tripsIndex',
     path: '/'
     data: ->
-      Trips.find {}, {sort: {createdAt: -1}}
+      return {
+        trips: Trips.find {}, { sort: { createdAt: -1 }}
+        name: i18n('trips.trips')
+      }
 
   @route 'tripsAdd',
     path: 'trips/new'
+    data: ->
+      return {
+        name: i18n('trips.new.descripton')
+      }
 
   @route 'tripsShow',
     layoutTemplate: 'layoutWithHeader'
@@ -42,6 +49,10 @@ Router.map ->
 
   @route 'usersNew',
     path: 'trip/:_id/users/new'
+    data: ->
+      return {
+        name: i18n('users.new.heading')
+      }
 
   @route 'usersIndex',
     path: 'trips/:_id/users'
@@ -58,6 +69,7 @@ Router.map ->
       return {
         trip: trip
         users: users
+        name: i18n('users.index.heading')
       }
 
   @route 'signUp',
@@ -73,11 +85,18 @@ Router.map ->
 
   @route 'budgetNew',
     path: 'trip/:_id/budget/new'
+    data: ->
+      return {
+        name: i18n('trips.budget.heading')
+      }
 
   @route 'expenseNew',
     path: 'trip/:_id/expenses/new'
     data: ->
-      return Trips.findOne({_id: @params._id})
+      return {
+        trip: Trips.findOne({_id: @params._id}),
+        name: i18n('expenses.new.heading')
+      }
 
   @route 'lab',
     path: 'lab'

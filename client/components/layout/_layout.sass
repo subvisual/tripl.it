@@ -4,8 +4,12 @@
   left: 0
   width: 100%
 
+  .Heading
+    margin: 0 $window-space
+
 .u-makeContent,
-.u-makeContentWithHeader
+.u-makeContentWithHeader,
+.u-makeContentWithHeading
   position: absolute
   top: $navigation-height
   left: 0
@@ -13,6 +17,10 @@
   height: calc(100% - #{$navigation-height})
   overflow: scroll
   -webkit-overflow-scrolling: touch
+
+.u-makeContentWithHeading
+  top: $navigation-height + $heading-height
+  height: calc(100% - #{$navigation-height + $heading-height})
 
 .u-makeContentWithHeader
   top: $navigation-height + $heading-alpha-height
