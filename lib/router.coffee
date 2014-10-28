@@ -29,14 +29,14 @@ Router.map ->
     data: ->
       return {
         trips: Trips.find {}, { sort: { createdAt: -1 }}
-        name: i18n('trips.trips')
+        name: i18n('trips.index.title')
       }
 
   @route 'tripsAdd',
     path: 'trips/new'
     data: ->
       return {
-        name: i18n('trips.new.descripton')
+        name: i18n('trips.new.title')
       }
 
   @route 'tripsShow',
@@ -51,7 +51,7 @@ Router.map ->
     path: 'trip/:_id/users/new'
     data: ->
       return {
-        name: i18n('users.new.heading')
+        name: i18n('users.new.title')
       }
 
   @route 'usersIndex',
@@ -69,7 +69,7 @@ Router.map ->
       return {
         trip: trip
         users: users
-        name: i18n('users.index.heading')
+        name: i18n('users.index.title')
       }
 
   @route 'signUp',
@@ -87,7 +87,7 @@ Router.map ->
     path: 'trip/:_id/budget/new'
     data: ->
       return {
-        name: i18n('trips.budget.heading')
+        name: i18n('trips.budget.title')
       }
 
   @route 'expenseNew',
@@ -95,7 +95,7 @@ Router.map ->
     data: ->
       return {
         trip: Trips.findOne({_id: @params._id}),
-        name: i18n('expenses.new.heading')
+        name: i18n('expenses.new.title')
       }
 
   @route 'lab',
