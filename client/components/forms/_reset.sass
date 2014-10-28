@@ -1,21 +1,11 @@
+=style-placeholder
+  font-weight: 300
+  font-style: italic
+  color: $light-blue
+
+$placeholder-selectors: ':-webkit-input-placeholder' '-moz-placeholder' ':-moz-placeholder' '-ms-input-placeholder' 
 input
   border: none
-  &::-webkit-input-placeholder
-    font-weight: 300
-    font-style: italic
-    color: $light-blue
-
-  &:-moz-placeholder
-    font-weight: 300
-    font-style: italic
-    color: $light-blue
-
-  &::-moz-placeholder
-    font-weight: 300
-    font-style: italic
-    color: $light-blue
-
-  &:-ms-input-placeholder
-    font-weight: 300
-    font-style: italic
-    color: $light-blue
+  @each $selector in $placeholder-selectors
+    &:#{$selector}
+      +style-placeholder
