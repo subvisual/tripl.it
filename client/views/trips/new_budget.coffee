@@ -32,10 +32,10 @@ Template.budgetNew.submit = ->
     $set:
       budgetAmount: amount,
       budgetCurrency: currency
-  Router.go 'tripsShow', { _id: getRouterParams()._id }
+  Router.go 'trips.show', { _id: getRouterParams()._id }
 
 Template.budgetNew.cancel = ->
-  Router.go 'usersNew', { _id: getRouterParams()._id }
+  Router.go 'users.new', { _id: getRouterParams()._id }
 
 Template.budgetNew.events
   'submit': (e) ->

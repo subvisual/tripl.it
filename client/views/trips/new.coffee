@@ -8,9 +8,9 @@ Template.tripsNew.submit = ->
     _id: tripId
     name: name
     users: [{ email: Meteor.user().emails[0].address }]
-  Router.go 'usersNew', { _id: tripId }
+  Router.go 'users.new', { _id: tripId }
 
 Template.tripsNew.events
   'submit': (e) ->
     e.preventDefault()
-    Template.tripsAdd.submit()
+    Template.tripsNew.submit()

@@ -37,28 +37,15 @@ Router.route 'trips/new',
   name: 'trips.new'
   controller: 'TripsNewController'
 
+Router.route 'trips/:_id/users',
+  name: 'users.index'
+  controller: 'UsersController'
+
+Router.route 'trips/:_id/users/new',
+  name: 'users.new'
+  controller: 'UsersNewController'
+
 Router.map ->
-  @route 'usersNew',
-    path: 'trip/:_id/users/new'
-    data: ->
-      name: i18n('users.new.title')
-
-  @route 'usersIndex',
-    path: 'trips/:_id/users'
-    data: ->
-      trip = Trips.findOne(@params._id)
-      users = new Array
-      _.each trip.users, (user) ->
-        foundUser = Meteor.users.findOne({ email: user.email })
-        if foundUser
-          users.push foundUser
-        else
-          users.push user
-
-      trip: trip
-      users: users
-      name: i18n('users.index.title')
-
   @route 'signUp',
     path: 'sign_up'
 

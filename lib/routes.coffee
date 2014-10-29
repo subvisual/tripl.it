@@ -14,7 +14,7 @@ defaultNavigation =
       route: 'trips.index'
     next:
       icon: 'Add'
-      route: 'usersNew'
+      route: 'users.new'
 
   'trips.show': ->
     previous:
@@ -22,7 +22,7 @@ defaultNavigation =
       route: 'trips.index'
     next: false
 
-  usersNew: ->
+  'users.new': ->
     previous:
       icon: 'Back'
       route: 'trips.new'
@@ -30,16 +30,16 @@ defaultNavigation =
       icon: 'Add'
       route: 'budgetNew'
 
-  usersIndex: ->
+  'users.index': ->
     previous: false
     next:
       icon: 'Add'
-      route: 'usersNew'
+      route: 'users.new'
 
   budgetNew: ->
     previous:
       icon: 'Back'
-      route: 'usersNew'
+      route: 'users.new'
     next:
       icon: 'Add'
       route: 'trips.show'
