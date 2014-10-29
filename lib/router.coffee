@@ -4,7 +4,7 @@ Router.configure
 beforeHooks =
   isLoggedIn: ->
     if !Meteor.userId()
-      Router.go 'signIn'
+      Router.go 'sign.in'
     @next()
 
   resetNavigationVent: ->
@@ -13,7 +13,7 @@ beforeHooks =
 
 Router.onBeforeAction beforeHooks.resetNavigationVent
 Router.onBeforeAction beforeHooks.isLoggedIn,
-  except: [ 'signIn', 'signUp', 'lab' ]
+  except: [ 'sign.in', 'sign.up', 'lab' ]
 
 if Meteor.isClient
   subscribed = false
@@ -53,22 +53,30 @@ Router.route 'trip/:_id/budget/new',
   name: 'trips.budget'
   controller: 'TripsBudgetController'
 
-Router.map ->
-  @route 'signUp',
-    path: 'sign_up'
+Router.route 'sign_in',
+  name: 'sign.in'
 
-  @route 'signIn',
-    path: 'sign_in'
+Router.route 'sign_out', ->
+  Meteor.logout()
+  @render('sign.out')
 
-  @route 'signOut',
-    path: 'sign_out'
-    action: ->
-      Meteor.logout()
+Router.route 'sign_up',
+  name: 'sign.up'
 
-  #@route 'budgetNew',
-    #path: 'trip/:_id/budget/new'
-    #data: ->
-      #name: i18n('trips.budget.title')
+Router.route 'lab',
+  name: 'lab'
 
-  @route 'lab',
-    path: 'lab'
+#Router.map ->
+  #@route 'signUp',
+    #path: 'sign_up'
+
+  #@route 'signIn',
+    #path: 'sign_in'
+
+  #@route 'signOut',
+    #path: 'sign_out'
+    #action: ->
+      #Meteor.logout()
+
+  #@route 'lab',
+    #path: 'lab'

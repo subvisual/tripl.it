@@ -20,7 +20,7 @@ Template.signUp.submit = () ->
     if err
       console.log(err)
     else
-      Router.go 'tripsIndex'
+      Router.go 'trips.index'
   )
 
 Template.signUp.events

@@ -1,17 +1,13 @@
 Template.signIn.helpers
   emailAttributes: ->
-    {
-      type: "email"
-      name: "email"
-      placeholder: "Type your email here..."
-    }
+    type: "email"
+    name: "email"
+    placeholder: "Type your email here..."
 
   passwordAttributes: ->
-    {
-      type: 'password'
-      name: 'password'
-      placeholder: 'Type your password here...'
-    }
+    type: 'password'
+    name: 'password'
+    placeholder: 'Type your password here...'
 
 Template.signIn.submit = ->
   email = $('#email').val()
@@ -19,7 +15,7 @@ Template.signIn.submit = ->
   Meteor.loginWithPassword email, password, (err) ->
     if !err
       registerPushNotificationService()
-      Router.go 'tripsIndex'
+      Router.go 'trips.index'
 
 Template.signIn.events
   'submit': (e) ->

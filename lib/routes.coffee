@@ -52,11 +52,11 @@ defaultNavigation =
       icon: 'Add'
       route: false
 
-  signIn: ->
+  'sign.in': ->
     previous: false
     next: false
 
-  signUp: ->
+  'sign.up': ->
     previous: false
     next: false
 
