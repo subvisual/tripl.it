@@ -8,7 +8,7 @@ categories = [
     description: 'Food'
   },
   {
-    value: 'drinks'
+    value: 'drink'
     description: 'Drinks'
   },
   {

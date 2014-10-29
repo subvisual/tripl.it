@@ -1,17 +1,18 @@
 <template name="lab">
   <section class="LabPage">
-    <h1 class="LabPage-title">Tripl.it Lab</h1>
-
     <div class="Section">
       <div class="Section-title">Text and number inputs</div>
-      <input type="text" class="TextInput" placeholder="Input of type text">
 
-      <div class="Grid">
-        <div class="Column--70 Column">
-          <input type="text" class="TextInput" placeholder="Input of type text">
-        </div>
-        <div class="Column Column--30">
-          {{> dropdownInput list=currencies selected=selectedCurrency}}
+      <div class="Form">
+        <input type="text" class="TextInput" placeholder="Input of type text">
+
+        <div class="Grid">
+          <div class="Column--70 Column">
+            <input type="text" class="TextInput" placeholder="Input of type text">
+          </div>
+          <div class="Column Column--30">
+            {{> dropdownInput list=currencies selected=selectedCurrency}}
+          </div>
         </div>
       </div>
     </div>
@@ -25,13 +26,18 @@
 
 
     <div class="Section">
-      <div class="Section-title">Radio Group</div>
+      <div class="Section-title">Radio Groups</div>
       {{> radioGroup name="random" list=categories}}
     </div>
 
     <div class="Section">
       <div class="Section-title">Heading Alpha</div>
       {{#headingAlpha current="300" total="500"}}Rubyconf PT{{/headingAlpha}}
+    </div>
+
+    <div class="Section">
+      <div class="Section-title">Page Title</div>
+      <h1 class="Heading">Rubyconf PT</h1>
     </div>
   </section>
 </template>

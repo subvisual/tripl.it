@@ -65,18 +65,3 @@ Router.route 'sign_up',
 
 Router.route 'lab',
   name: 'lab'
-
-#Router.map ->
-  #@route 'signUp',
-    #path: 'sign_up'
-
-  #@route 'signIn',
-    #path: 'sign_in'
-
-  #@route 'signOut',
-    #path: 'sign_out'
-    #action: ->
-      #Meteor.logout()
-
-  #@route 'lab',
-    #path: 'lab'

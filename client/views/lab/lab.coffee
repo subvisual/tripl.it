@@ -17,4 +17,6 @@ Template.lab.helpers
     [{value: 1, description: 'Random'}, {value: 2, description: 'Random 2'}]
 
   categories: ->
-    Categories.all()
+    return _.map Categories.all(), (category) ->
+      _.extend category,
+        image: "img/#{category.value}-icon.svg"
