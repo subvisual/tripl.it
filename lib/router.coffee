@@ -49,6 +49,10 @@ Router.route 'trip/:_id/expenses/new',
   name: 'expenses.new'
   controller: 'ExpensesNewController'
 
+Router.route 'trip/:_id/budget/new',
+  name: 'trips.budget'
+  controller: 'TripsBudgetController'
+
 Router.map ->
   @route 'signUp',
     path: 'sign_up'
@@ -61,10 +65,10 @@ Router.map ->
     action: ->
       Meteor.logout()
 
-  @route 'budgetNew',
-    path: 'trip/:_id/budget/new'
-    data: ->
-      name: i18n('trips.budget.title')
+  #@route 'budgetNew',
+    #path: 'trip/:_id/budget/new'
+    #data: ->
+      #name: i18n('trips.budget.title')
 
   @route 'lab',
     path: 'lab'

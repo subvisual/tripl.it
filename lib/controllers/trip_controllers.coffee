@@ -13,3 +13,7 @@
 @TripsNewController = RouteController.extend
   data: ->
     name: i18n('trips.new.title')
+
+@TripsBudgetController = RouteController.extend
+  data: ->
+    name: i18n('trips.budget.title')

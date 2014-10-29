@@ -6,11 +6,11 @@ currencies = [
 
 selectedCurrency = currencies[0]
 
-Template.budgetNew.created = () ->
-  NavigationVent.subscribeToPrevious(_.bind(Template.budgetNew.cancel, this))
-  NavigationVent.subscribeToNext(_.bind(Template.budgetNew.submit, this))
+Template.tripsBudget.created = () ->
+  NavigationVent.subscribeToPrevious(_.bind(Template.tripsBudget.cancel, this))
+  NavigationVent.subscribeToNext(_.bind(Template.tripsBudget.submit, this))
 
-Template.budgetNew.helpers
+Template.tripsBudget.helpers
   inputAttributes: ->
     {
       placeholder: "Amount you plan to spend"
@@ -25,7 +25,7 @@ Template.budgetNew.helpers
   selectedCurrency: ->
     selectedCurrency
 
-Template.budgetNew.submit = ->
+Template.tripsBudget.submit = ->
   amount = parseInt($('[name="amount"]').val())
   currency = $('[name="dropdown_selected"]').text()
   Trips.update { _id: getRouterParams()._id },
@@ -34,10 +34,10 @@ Template.budgetNew.submit = ->
       budgetCurrency: currency
   Router.go 'trips.show', { _id: getRouterParams()._id }
 
-Template.budgetNew.cancel = ->
+Template.tripsBudget.cancel = ->
   Router.go 'users.new', { _id: getRouterParams()._id }
 
-Template.budgetNew.events
+Template.tripsBudget.events
   'submit': (e) ->
     e.preventDefault()
-    Template.budgetNew.submit()
+    Template.tripsBudget.submit()
