@@ -1,10 +1,6 @@
 .Navigation
-  $inner-height: $navigation-height - $space
-
-  +display(flex)
-  +flex-wrap(nowrap)
-  +align-items(center)
-  +justify-content(space-between)
+  $vertical-space: $space
+  $inner-height: $navigation-height - $vertical-space
 
   width: 100%
   height: $navigation-height
@@ -14,11 +10,14 @@
   z-index: 102 
 
   .Navigation-item
+    width: 33.3%
+    display: inline-block
     padding: 0 $space
-    max-height: 100%
+    height: 100%
 
   [class^=Icon], [class^=Image]
-    max-height: $inner-height
+    margin-top: $vertical-space / 2
+    height: $inner-height
 
   a
     cursor: pointer

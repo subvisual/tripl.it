@@ -1,9 +1,4 @@
 .ActionBar
-  +display(flex)
-  +flex-wrap(nowrap)
-  +align-items(baseline)
-  +justify-content(space-between)
-
   background-color: $action-bar-background-color
   height: $action-bar-height
   padding: $space / 2 $space
@@ -11,4 +6,6 @@
   z-index: 2
 
   [class^="Icon"], svg
+    display: inline-block
+    width: 33.3%
     max-height: 100%
