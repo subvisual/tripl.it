@@ -45,6 +45,10 @@ Router.route 'trips/:_id/users/new',
   name: 'users.new'
   controller: 'UsersNewController'
 
+Router.route 'trip/:_id/expenses/new',
+  name: 'expenses.new'
+  controller: 'ExpensesNewController'
+
 Router.map ->
   @route 'signUp',
     path: 'sign_up'
@@ -61,12 +65,6 @@ Router.map ->
     path: 'trip/:_id/budget/new'
     data: ->
       name: i18n('trips.budget.title')
-
-  @route 'expenseNew',
-    path: 'trip/:_id/expenses/new'
-    data: ->
-      trip: Trips.findOne({_id: @params._id}),
-      name: i18n('expenses.new.title')
 
   @route 'lab',
     path: 'lab'

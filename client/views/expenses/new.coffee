@@ -1,8 +1,8 @@
-Template.expenseNew.created = () ->
-  NavigationVent.subscribeToPrevious(_.bind(Template.expenseNew.cancel, this))
-  NavigationVent.subscribeToNext(_.bind(Template.expenseNew.submit, this))
+Template.expensesNew.created = () ->
+  NavigationVent.subscribeToPrevious(_.bind(Template.expensesNew.cancel, this))
+  NavigationVent.subscribeToNext(_.bind(Template.expensesNew.submit, this))
 
-Template.expenseNew.submit = ->
+Template.expensesNew.submit = ->
   value = parseInt($('input[name="expense_value"]').val())
   categoryId = $('input[name="expense_category"]:checked').val()
   payingUser = $('[name="expense_paying"]').val()
@@ -15,15 +15,15 @@ Template.expenseNew.submit = ->
   Meteor.call('createExpense', params)
   Router.go 'trips.show', { _id: getRouterParams()._id }
 
-Template.expenseNew.cancel = ->
+Template.expensesNew.cancel = ->
   Router.go 'trips.show', { _id: getRouterParams()._id }
 
-Template.expenseNew.events
+Template.expensesNew.events
   'submit': (e) ->
     e.preventDefault()
-    Template.expenseNew.submit()
+    Template.expensesNew.submit()
 
-Template.expenseNew.helpers
+Template.expensesNew.helpers
   categories: ->
     return _.map Categories.all(), (category) ->
       upperCase = "#{category.value[0].toUpperCase()}#{category.value.slice(1)}"

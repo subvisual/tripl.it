@@ -44,7 +44,7 @@ defaultNavigation =
       icon: 'Add'
       route: 'trips.show'
 
-  expenseNew: ->
+  'expenses.new': ->
     previous:
       icon: 'Back'
       route: false
