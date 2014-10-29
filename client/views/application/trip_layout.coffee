@@ -1,5 +1,5 @@
-Template.layoutWithHeader.rendered = ->
+Template.tripLayout.rendered = ->
   contentHeight = window.innerHeight - parseInt($('.u-makeHeader').css('height'))
-  $('.u-makeContentWithHeader').css('height', "#{contentHeight}px")
+  $('.u-makeContent').css('height', "#{contentHeight}px")
 
   Overscroll(document.querySelector('.Page'))

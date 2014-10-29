@@ -1,15 +1,14 @@
 .u-makeHeader
   position: absolute
   top: 0
+  
   left: 0
   width: 100%
 
-  .Heading
+  .PageHeader
     margin: 0 $window-space
 
-.u-makeContent,
-.u-makeContentWithHeader,
-.u-makeContentWithHeading
+.u-makeContent
   position: absolute
   top: $navigation-height
   left: 0
@@ -18,10 +17,10 @@
   overflow: scroll
   -webkit-overflow-scrolling: touch
 
-.u-makeContentWithHeading
-  top: $navigation-height + $heading-height
-  height: calc(100% - #{$navigation-height + $heading-height})
+.Layout .u-makeContent
+  top: $navigation-height + $page-header-height
+  height: calc(100% - #{$navigation-height + $page-header-height})
 
-.u-makeContentWithHeader
-  top: $navigation-height + $heading-alpha-height
-  height: calc(100% - #{$navigation-height + $heading-alpha-height})
+.TripLayout .u-makeContent
+  top: $navigation-height + $trip-header-height
+  height: calc(100% - #{$navigation-height + $trip-header-height})

@@ -1,0 +1,56 @@
+.PageHeader
+  font-size: 1.5rem
+  color: $blue
+  border-bottom: 1px solid $blue
+  height: 40px
+  line-height: 40px
+
+.TripHeader
+  +white-space-fix
+
+  background: $black
+  color: $white
+  height: $trip-header-height
+  padding: 0 $space
+  position: relative
+  z-index: 3
+
+  .TripHeader-title,
+  .TripHeader-extra
+    height: 100%
+
+  .TripHeader-title
+    width: 100%
+    font-size: 2.2rem
+    line-height: $trip-header-height
+
+  .TripHeader-extra
+    position: absolute
+    right: $space
+    top: 0
+    padding: (($trip-header-height - $trip-header-price-height * 2) / 2) 0
+
+  .TripHeader-price
+    display: inline
+
+  .TripHeader-progressBar
+    position: absolute
+    right: 0
+    bottom: -$trip-header-progress-height
+    height: $trip-header-progress-height
+    width: 100%
+    z-index: 2
+
+.TripHeader-label
+  line-height: $trip-header-price-height
+  color: $white
+  font-style: italic
+
+.TripHeader-price
+  color: $white
+  font-weight: bold
+  line-height: $trip-header-price-height
+
+.TripHeader-price.is-current
+  font-size: 1.2rem
+  color: $blue

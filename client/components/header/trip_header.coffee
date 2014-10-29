@@ -1,4 +1,4 @@
-Template.headingAlpha.helpers
+Template.tripHeader.helpers
   percentage: ->
     total = parseInt @total
     current = parseInt @current

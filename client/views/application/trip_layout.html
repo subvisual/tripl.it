@@ -1,8 +1,8 @@
-<template name="layout">
-  <div class="Layout">
+<template name="tripLayout">
+  <div class="TripLayout">
     <div class="u-makeHeader">
       {{> nav}}
-      <div class="PageHeader">{{name}}</div>
+      {{#tripHeader current=currentBudget total=budgetAmount}}{{name}}{{/tripHeader}}
     </div>
     <div class="u-makeContent Page">
       {{> yield}}
