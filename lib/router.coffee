@@ -5,9 +5,11 @@ beforeHooks =
   isLoggedIn: ->
     if !Meteor.userId()
       Router.go 'signIn'
+    @next()
 
   resetNavigationVent: ->
     NavigationVent.reset()
+    @next()
 
 Router.onBeforeAction beforeHooks.resetNavigationVent
 Router.onBeforeAction beforeHooks.isLoggedIn,
@@ -23,36 +25,23 @@ if Meteor.isClient
       Meteor.subscribe 'notifications'
       subscribed = true
 
+Router.route '/',
+  name: 'trips.index'
+  controller: 'TripsController'
+
+Router.route 'trip/:_id',
+  name: 'trips.show'
+  controller: 'TripsShowController'
+
+Router.route 'trips/new',
+  name: 'trips.new'
+  controller: 'TripsNewController'
+
 Router.map ->
-  @route 'tripsIndex',
-    path: '/'
-    data: ->
-      return {
-        trips: Trips.find {}, { sort: { createdAt: -1 }}
-        name: i18n('trips.index.title')
-      }
-
-  @route 'tripsAdd',
-    path: 'trips/new'
-    data: ->
-      return {
-        name: i18n('trips.new.title')
-      }
-
-  @route 'tripsShow',
-    layoutTemplate: 'layoutWithHeader'
-    path: 'trip/:_id'
-    data: ->
-      return Trips.findOne @params._id, transform: (trip) ->
-        trip['expenses'] = Expenses.find {tripId: trip._id}, {sort: {createdAt: -1}}
-        return trip
-
   @route 'usersNew',
     path: 'trip/:_id/users/new'
     data: ->
-      return {
-        name: i18n('users.new.title')
-      }
+      name: i18n('users.new.title')
 
   @route 'usersIndex',
     path: 'trips/:_id/users'
@@ -66,11 +55,9 @@ Router.map ->
         else
           users.push user
 
-      return {
-        trip: trip
-        users: users
-        name: i18n('users.index.title')
-      }
+      trip: trip
+      users: users
+      name: i18n('users.index.title')
 
   @route 'signUp',
     path: 'sign_up'
@@ -86,17 +73,13 @@ Router.map ->
   @route 'budgetNew',
     path: 'trip/:_id/budget/new'
     data: ->
-      return {
-        name: i18n('trips.budget.title')
-      }
+      name: i18n('trips.budget.title')
 
   @route 'expenseNew',
     path: 'trip/:_id/expenses/new'
     data: ->
-      return {
-        trip: Trips.findOne({_id: @params._id}),
-        name: i18n('expenses.new.title')
-      }
+      trip: Trips.findOne({_id: @params._id}),
+      name: i18n('expenses.new.title')
 
   @route 'lab',
     path: 'lab'

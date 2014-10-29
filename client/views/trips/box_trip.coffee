@@ -5,4 +5,4 @@ Template.boxTrip.events
     Trips.remove @id
 
   'tap .Box': ->
-    Router.go Router.path('tripsShow', { _id: @id })
+    Router.go Router.path('trips.show', { _id: @id })

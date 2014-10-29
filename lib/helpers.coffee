@@ -1,5 +1,5 @@
 @getCurrentRouteName = ->
-  Router.current().route.name
+  Router.current().route.getName()
 
 @getRouterParams = ->
   Router.current().params

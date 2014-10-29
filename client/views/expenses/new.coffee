@@ -13,10 +13,10 @@ Template.expenseNew.submit = ->
     user: payingUser
 
   Meteor.call('createExpense', params)
-  Router.go 'tripsShow', { _id: getRouterParams()._id }
+  Router.go 'trips.show', { _id: getRouterParams()._id }
 
 Template.expenseNew.cancel = ->
-  Router.go 'tripsShow', { _id: getRouterParams()._id }
+  Router.go 'trips.show', { _id: getRouterParams()._id }
 
 Template.expenseNew.events
   'submit': (e) ->

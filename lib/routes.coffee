@@ -3,29 +3,29 @@ defaultNavigation =
   previous: false
 
 @NavRoutes =
-  tripsIndex: ->
+  'trips.index': ->
     next:
       icon: 'Add'
-      route: 'tripsAdd'
+      route: 'trips.new'
 
-  tripsAdd: ->
+  'trips.new': ->
     previous:
       icon: 'Back'
-      route: 'tripsIndex'
+      route: 'trips.index'
     next:
       icon: 'Add'
       route: 'usersNew'
 
-  tripsShow: ->
+  'trips.show': ->
     previous:
       icon: 'Back'
-      route: 'tripsIndex'
+      route: 'trips.index'
     next: false
 
   usersNew: ->
     previous:
       icon: 'Back'
-      route: 'tripsAdd'
+      route: 'trips.new'
     next:
       icon: 'Add'
       route: 'budgetNew'
@@ -42,7 +42,7 @@ defaultNavigation =
       route: 'usersNew'
     next:
       icon: 'Add'
-      route: 'tripsShow'
+      route: 'trips.show'
 
   expenseNew: ->
     previous:

@@ -1,7 +1,7 @@
-Template.tripsAdd.created = () ->
-  NavigationVent.subscribeToNext(_.bind(Template.tripsAdd.submit, this))
+Template.tripsNew.created = () ->
+  NavigationVent.subscribeToNext(_.bind(Template.tripsNew.submit, this))
 
-Template.tripsAdd.submit = ->
+Template.tripsNew.submit = ->
   tripId = Random.id()
   name = $('#trip_name').val()
   Trips.insert
@@ -10,7 +10,7 @@ Template.tripsAdd.submit = ->
     users: [{ email: Meteor.user().emails[0].address }]
   Router.go 'usersNew', { _id: tripId }
 
-Template.tripsAdd.events
+Template.tripsNew.events
   'submit': (e) ->
     e.preventDefault()
     Template.tripsAdd.submit()
