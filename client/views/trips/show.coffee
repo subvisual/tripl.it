@@ -1,8 +1,6 @@
 Template.tripsShow.helpers
   actionAttributes: ->
-    return {
-      classes: "u-fixedBottom"
-    }
+    classes: "u-fixedBottom"
 
 Template.tripsShow.events
   'click .IconAddExpense': ->

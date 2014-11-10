@@ -24,7 +24,6 @@
       {{> checkbox name="checkbox3"}}
     </div>
 
-
     <div class="Section">
       <div class="Section-title">Radio Groups</div>
       {{> radioGroup name="random" list=categories}}
@@ -43,6 +42,27 @@
     <div class="Section">
       <div class="Section-title">Navigation</div>
       {{> nav}}
+    </div>
+
+    <div class="Section">
+      <div class="Section-title">Action Bar</div>
+      {{> actionBar actionAttributes}}
+    </div>
+
+    <div class="Section">
+      <div class="Section-title">Box list</div>
+      {{#boxList}}
+        {{> box description="Rubyconf PT"}}
+        {{> box description="CSS CONF"}}
+      {{/boxList}}
+    </div>
+
+    <div class="Section">
+      <div class="Section-title">Timeline</div>
+      {{#boxList timeline="true"}}
+        {{> box description="Rubyconf PT" icon="IconDrinks" extra="10"}}
+        {{> box description="Rubyconf PT" icon="IconFood" extra="10"}}
+      {{/boxList}}
     </div>
   </section>
 </template>

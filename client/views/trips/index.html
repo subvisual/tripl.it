@@ -1,7 +1,7 @@
 <template name="tripsIndex">
-  <div class="BoxList">
+  {{#boxList}}
     {{#each trips}}
       {{> boxTrip id=_id description=name path=path }}
     {{/each}}
-  </div>
+  {{/boxList}}
 </template>

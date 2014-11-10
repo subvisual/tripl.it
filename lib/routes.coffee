@@ -60,8 +60,10 @@ defaultNavigation =
     previous: false
     next: false
 
-  lab: ->
-    previous: false
+  'lab': ->
+    previous:
+      icon: 'Back'
+      route: 'trips.index'
     next: false
 
 parseNavigationParams = (params) ->
