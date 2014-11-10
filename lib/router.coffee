@@ -7,11 +7,11 @@ beforeHooks =
       Router.go 'sign.in'
     @next()
 
-  resetNavigationVent: ->
-    NavigationVent.reset()
+  resetNavigation: ->
+    Navigation.reset()
     @next()
 
-Router.onBeforeAction beforeHooks.resetNavigationVent
+Router.onBeforeAction beforeHooks.resetNavigation
 Router.onBeforeAction beforeHooks.isLoggedIn,
   except: [ 'sign.in', 'sign.up', 'lab' ]
 

@@ -1,6 +1,6 @@
 Template.expensesNew.created = () ->
-  NavigationVent.subscribeToPrevious(_.bind(Template.expensesNew.cancel, this))
-  NavigationVent.subscribeToNext(_.bind(Template.expensesNew.submit, this))
+  Navigation.onPrevious(_.bind(Template.expensesNew.cancel, this))
+  Navigation.onNext(_.bind(Template.expensesNew.submit, this))
 
 Template.expensesNew.submit = ->
   value = parseInt($('input[name="expense_value"]').val())

@@ -1,5 +1,5 @@
 Template.tripsNew.created = () ->
-  NavigationVent.subscribeToNext(_.bind(Template.tripsNew.submit, this))
+  Navigation.onNext(_.bind(Template.tripsNew.submit, this))
 
 Template.tripsNew.submit = ->
   tripId = Random.id()

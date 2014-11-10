@@ -1,6 +1,6 @@
 Template.usersNew.created = () ->
-  NavigationVent.subscribeToPrevious(_.bind(Template.usersNew.cancel, this))
-  NavigationVent.subscribeToNext(_.bind(Template.usersNew.submit, this))
+  Navigation.onPrevious(_.bind(Template.usersNew.cancel, this))
+  Navigation.onNext(_.bind(Template.usersNew.submit, this))
 
 Template.usersNew.submit = ->
   email = $('#user_email').val()

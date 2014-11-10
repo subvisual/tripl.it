@@ -1,11 +1,11 @@
-class @NavigationVent
+class @Navigation
   @nextObservers = []
   @previousObservers = []
 
-  @subscribeToNext: (f) =>
+  @onNext: (f) =>
     @nextObservers.push f
 
-  @subscribeToPrevious: (f) =>
+  @onPrevious: (f) =>
     @previousObservers.push f
 
   @notifyNext: =>

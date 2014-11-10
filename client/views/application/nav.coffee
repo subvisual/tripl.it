@@ -1,9 +1,9 @@
 Template.nav.events
   'tap #navigation-next': ->
-    NavigationVent.notifyNext()
+    Navigation.notifyNext()
 
   'tap #navigation-previous': ->
-    NavigationVent.notifyPrevious()
+    Navigation.notifyPrevious()
 
 Template.nav.helpers
   next: ->
