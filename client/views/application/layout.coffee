@@ -1,5 +1,14 @@
 Template.layout.rendered = ->
-  contentHeight = window.innerHeight - parseInt($('.u-makeHeader').css('height'))
-  $('.u-makeContent').css('height', "#{contentHeight}px")
-
+  setContentHeight()
   Overscroll(document.querySelector('.Page'))
+
+setContentHeight = ->
+  header = $('.u-makeHeader')
+  actionBar = $('.ActionBar')
+
+  contentHeight = window.innerHeight - parseInt(header.outerHeight())
+
+  if actionBar.length
+    contentHeight -= parseInt(actionBar.outerHeight())
+
+  $('.u-makeContent').css('height', "#{contentHeight}px")

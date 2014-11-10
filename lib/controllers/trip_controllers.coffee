@@ -4,7 +4,6 @@
     trips: Trips.find {}, { sort: { createdAt: -1 }}
 
 @TripsShowController = RouteController.extend
-  layoutTemplate: 'tripLayout'
   data: ->
     return Trips.findOne @params._id, transform: (trip) ->
       trip['expenses'] = Expenses.find {tripId: trip._id}, {sort: {createdAt: -1}}
