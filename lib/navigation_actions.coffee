@@ -2,7 +2,7 @@ defaultNavigation =
   next: false
   previous: false
 
-@NavRoutes =
+Actions =
   'trips.index': ->
     next:
       icon: 'Add'
@@ -14,13 +14,11 @@ defaultNavigation =
       route: 'trips.index'
     next:
       icon: 'Add'
-      route: 'users.new'
 
   'trips.show': ->
     previous:
       icon: 'Back'
       route: 'trips.index'
-    next: false
 
   'users.new': ->
     previous:
@@ -31,7 +29,6 @@ defaultNavigation =
       route: 'trips.budget'
 
   'users.index': ->
-    previous: false
     next:
       icon: 'Add'
       route: 'users.new'
@@ -52,32 +49,44 @@ defaultNavigation =
       icon: 'Add'
       route: false
 
-  'sign.in': ->
-    previous: false
-    next: false
-
-  'sign.up': ->
-    previous: false
-    next: false
-
   'lab': ->
     previous:
       icon: 'Back'
       route: 'trips.index'
-    next: false
 
-parseNavigationParams = (params) ->
-  if _.isFunction(params)
-    params = params()
-  else if params && params.route && _.isString(params.route)
-    params.route = Router.path(params.route)
-  return params
+class @NavigationActions
+  @next: ->
+    new NavigationActions(getCurrentRouteName()).call('next')
 
-@getNavigationForRoute = ->
-  map = NavRoutes[getCurrentRouteName()]()
-  map = { next: false, previous: false } if !map
+  @previous: ->
+    new NavigationActions(getCurrentRouteName()).call('previous')
 
-  map.next = parseNavigationParams(map.next)
-  map.previous = parseNavigationParams(map.previous)
+  constructor: (@routeName) ->
 
-  return map
+  call: (direction) =>
+    @getActions()
+    @parseDirection(direction)
+
+  getActions: ->
+    @actions = Actions[@routeName]
+    if _.isFunction(@actions)
+      @actions = @actions()
+
+  parseDirection: (direction) ->
+    if !@actions
+      return {}
+
+    action = @actions[direction]
+
+    if _.isUndefined(action)
+      action = {}
+
+    if _.isFunction(action)
+      action = action()
+
+    if _.isFunction(action['route'])
+      action.route = action.route()
+    else if _.isString(action['route'])
+      action.route = Router.path(action.route)
+
+    _.defaults(action, {icon: false, route: false})

@@ -7,7 +7,7 @@ Template.nav.events
 
 Template.nav.helpers
   next: ->
-    getNavigationForRoute().next
+    NavigationActions.next()
 
   previous: ->
-    getNavigationForRoute().previous
+    NavigationActions.previous()
