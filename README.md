@@ -4,14 +4,20 @@ This version of tripl.it uses meteor. The reason for that is the out of the box 
 
 # Install
 
-First install meteor
+You need to install meteor first
 
 ```
 $ curl https://install.meteor.com/ | sh
 ```
 
-Now simply run the application
+Running the application should be enough now
 
 ```
 $ meteor
 ```
+
+# TODO
+
+* Page transitions.
+* Add/remove expenses animation.
+* Push notifications.
