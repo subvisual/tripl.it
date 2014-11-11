@@ -14,4 +14,4 @@ Template.layout.events
 
 Template.layout.rendered = ->
   Overscroll(document.querySelector('.Page'))
-  new PageTransition(@find('#content-container'))
+  PageTransition.initialize(@find('#content-container'))

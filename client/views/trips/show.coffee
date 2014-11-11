@@ -1,3 +1,8 @@
+Template.tripsShow.created = () ->
+  Navigation.onPrevious ->
+    PageTransition.animate 'slideRight'
+    Router.go('trips.index')
+
 Template.tripsShow.events
   'click .IconAddExpense': ->
     Router.go 'expenses.new', { _id: Router.current().params._id }

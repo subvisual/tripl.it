@@ -18,7 +18,6 @@ Actions =
   'trips.show': ->
     previous:
       icon: 'Back'
-      route: 'trips.index'
 
   'users.new': ->
     previous:
