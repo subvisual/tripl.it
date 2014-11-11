@@ -1,7 +1,9 @@
 <template name="tripsIndex">
-  {{#boxList}}
-    {{#each trips}}
-      {{> boxTrip id=_id description=name path=path }}
-    {{/each}}
-  {{/boxList}}
+  <div class="Page">
+    {{#boxList}}
+      {{#each trips}}
+        {{> boxTrip id=_id description=name path=path }}
+      {{/each}}
+    {{/boxList}}
+  </div>
 </template>

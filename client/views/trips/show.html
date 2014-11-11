@@ -1,9 +1,10 @@
 <template name="tripsShow">
-  {{#boxList timeline="true"}}
-    {{#each expenses}}
-      {{> boxExpense}}
-    {{/each}}
-  {{/boxList}}
+  <div class="Page">
+    {{#boxList timeline="true"}}
+      {{#each expenses}}
+        {{> boxExpense}}
+      {{/each}}
+    {{/boxList}}
 
-  {{> actionBar actionAttributes}}
+  </div>
 </template>

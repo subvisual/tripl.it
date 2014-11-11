@@ -1,11 +1,20 @@
 <template name="layout">
-  <div class="Layout">
-    <div class="u-makeHeader">
+  <div class="Layout {{#if tripShow}}is--tripShow{{/if}}">
+    <div class="Layout-header">
       {{> nav}}
-      <div class="PageHeader">{{name}}</div>
+
+      {{#if tripShow}}
+        {{#tripHeader current=currentBudget total=budgetAmount}}{{name}}{{/tripHeader}}
+      {{else}}
+        <div class="PageHeader">{{name}}</div>
+      {{/if}}
     </div>
-    <div class="u-makeContent Page">
+    <div id="content-container" class="Layout-content">
       {{> yield}}
     </div>
+
+    {{#if tripShow}}
+      {{> actionBar classes="u-fixedBottom"}}
+    {{/if}}
   </div>
 </template>
