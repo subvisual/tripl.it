@@ -1,6 +1,5 @@
 Template.tripsShow.created = () ->
   Navigation.onPrevious ->
-    PageTransition.animate 'slideRight'
     Router.go('trips.index')
 
 Template.tripsShow.events
