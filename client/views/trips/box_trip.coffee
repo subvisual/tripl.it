@@ -5,4 +5,4 @@ Template.boxTrip.events
     Trips.remove @id
 
   'tap .Box': ->
-    Router.go Router.path('trips.show', { _id: @id })
+    IronMime.go('trips.show', { _id: @id }, { animation: 'slideDown' })

@@ -1,15 +1,15 @@
-class Transition
-  currentAnimation: 'none'
+class @Mime
+  @currentAnimation: 'none'
 
-  initialize: (@el) ->
+  @initialize: (@el) ->
     @el._uihooks =
       insertElement: _.bind(@insertElement, this)
       removeElement: _.bind(@removeElement, this)
 
-  animate: (animation) =>
+  @animate: (animation) =>
     @currentAnimation = animation
 
-  insertElement: (node, next) ->
+  @insertElement: (node, next) ->
     if @currentAnimation in SlideHorizontal.animations
       SlideHorizontal.insertElement(node, next, @currentAnimation)
     else if @currentAnimation in SlideVertical.animations
@@ -19,7 +19,7 @@ class Transition
     else
       throw new Error("#{@currentAnimation} animation doesn't exist!")
 
-  removeElement: (node) ->
+  @removeElement: (node) ->
     if @currentAnimation in SlideHorizontal.animations
       SlideHorizontal.removeElement(node, @currentAnimation)
     else if @currentAnimation in SlideVertical.animations
@@ -81,5 +81,3 @@ class SlideHorizontal
       queue: false,
       complete: () ->
         $(node).remove()
-
-window.PageTransition = new Transition
