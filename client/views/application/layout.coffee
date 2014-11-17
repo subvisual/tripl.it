@@ -14,4 +14,4 @@ Template.layout.events
 
 Template.layout.rendered = ->
   Overscroll(document.querySelector('.Page'))
-  Mime.initialize(@find('#content-container'))
+  Bender.initialize(@find('#content-container'))
