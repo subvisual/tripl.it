@@ -1,10 +1,10 @@
 <template name="tripsIndex">
-  <div class="Layout-header">
+  {{#layoutHeader}}
     {{> nav}}
     <div class="PageHeader">{{name}}</div>
-  </div>
+  {{/layoutHeader}}
 
-  <div class="Layout-content">
+  {{#layoutContent}}
     <div class="Page">
       {{#boxList}}
         {{#each trips}}
@@ -12,5 +12,5 @@
         {{/each}}
       {{/boxList}}
     </div>
-  </div>
+  {{/layoutContent}}
 </template>

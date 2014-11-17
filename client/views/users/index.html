@@ -1,10 +1,10 @@
 <template name="usersIndex">
-  <div class="Layout-header">
+  {{#layoutHeader}}
     {{> nav}}
     <div class="PageHeader">{{name}}</div>
-  </div>
+  {{/layoutHeader}}
 
-  <div class="Layout-content">
+  {{#layoutContent}}
     <ul class="Page">
       {{#each users}}
       <li>
@@ -12,5 +12,5 @@
       </li> 
       {{/each}}
     </ul>
-  </div>
+  {{/layoutContent}}
 </template>

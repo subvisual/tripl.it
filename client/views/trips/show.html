@@ -1,10 +1,10 @@
 <template name="tripsShow">
-  <div class="Layout-header">
+  {{#layoutHeader}}
     {{> nav}}
     {{#tripHeader current=currentBudget total=budgetAmount}}{{name}}{{/tripHeader}}
-  </div>
+  {{/layoutHeader}}
 
-  <div class="Layout-content is--tripShow">
+  {{#layoutContent tripShow="true"}}
     <div class="Page">
       {{#boxList timeline="true"}}
         {{#each expenses}}
@@ -12,7 +12,7 @@
         {{/each}}
       {{/boxList}}
     </div>
-  </div>
+  {{/layoutContent}}
 
   {{> actionBar classes="u-fixedBottom"}}
 </template>

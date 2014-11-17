@@ -1,10 +1,11 @@
 <template name="tripsBudget">
-  <div class="Layout-header">
+  {{#layoutHeader}}
     {{> nav}}
     <div class="PageHeader">{{name}}</div>
+  {{/layoutHeader}}
   </div>
 
-  <div class="Layout-content">
+  {{#layoutContent}}
     <form class="Page">
       <div class="Grid">
         <div class="Column--70 Column">
@@ -17,5 +18,5 @@
 
       <input type="submit" class="u-displayNone">
     </form>
-  </div>
+  {{/layoutContent}}
 </template>
