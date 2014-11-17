@@ -1,6 +1,13 @@
 <template name="usersNew">
-  <form class="Page">
-    <input id="user_email" type="email" name="email" placeholder={{i18n 'users.new.namePlaceholder'}} class="TextInput">
-    <input type="submit" class="u-displayNone">
-  </form>
+  <div class="Layout-header">
+    {{> nav}}
+    <div class="PageHeader">{{name}}</div>
+  </div>
+
+  <div class="Layout-content">
+    <form class="Page">
+      <input id="user_email" type="email" name="email" placeholder={{i18n 'users.new.namePlaceholder'}} class="TextInput">
+      <input type="submit" class="u-displayNone">
+    </form>
+  </div>
 </template>

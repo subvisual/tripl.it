@@ -1,9 +1,16 @@
 <template name="tripsIndex">
-  <div class="Page">
-    {{#boxList}}
-      {{#each trips}}
-        {{> boxTrip id=_id description=name path=path }}
-      {{/each}}
-    {{/boxList}}
+  <div class="Layout-header">
+    {{> nav}}
+    <div class="PageHeader">{{name}}</div>
+  </div>
+
+  <div class="Layout-content">
+    <div class="Page">
+      {{#boxList}}
+        {{#each trips}}
+          {{> boxTrip id=_id description=name path=path }}
+        {{/each}}
+      {{/boxList}}
+    </div>
   </div>
 </template>

@@ -1,14 +1,21 @@
 <template name="tripsBudget">
-  <form class="Page">
-    <div class="Grid">
-      <div class="Column--70 Column">
-      <input type="text" name="amount" class="TextInput" {{inputAttributes}}>
-      </div>
-      <div class="Column Column--30">
-        {{> dropdownInput list=currencies selected=selectedCurrency id="currency"}}
-      </div>
-    </div>
+  <div class="Layout-header">
+    {{> nav}}
+    <div class="PageHeader">{{name}}</div>
+  </div>
 
-    <input type="submit" class="u-displayNone">
-  </form>
+  <div class="Layout-content">
+    <form class="Page">
+      <div class="Grid">
+        <div class="Column--70 Column">
+          <input type="text" name="amount" class="TextInput" {{inputAttributes}}>
+        </div>
+        <div class="Column Column--30">
+          {{> dropdownInput list=currencies selected=selectedCurrency id="currency"}}
+        </div>
+      </div>
+
+      <input type="submit" class="u-displayNone">
+    </form>
+  </div>
 </template>

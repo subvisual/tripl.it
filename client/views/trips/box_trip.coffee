@@ -5,4 +5,4 @@ Template.boxTrip.events
     Trips.remove @id
 
   'tap .Box': ->
-    IronMime.go('trips.show', { _id: @id }, { animation: 'slideDown' })
+    IronMime.go('trips.show', { _id: @id }, { animation: 'slideLeft' })
