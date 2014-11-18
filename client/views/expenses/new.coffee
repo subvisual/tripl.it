@@ -1,5 +1,7 @@
 Template.expensesNew.created = () ->
-  Navigation.onPrevious(_.bind(Template.expensesNew.cancel, this))
+  Navigation.onPrevious ->
+    IronBender.go 'trips.show', { _id: getRouterParams()._id }, { animation: 'slideOverUpClose' }
+
   Navigation.onNext(_.bind(Template.expensesNew.submit, this))
 
 Template.expensesNew.submit = ->
@@ -13,10 +15,7 @@ Template.expensesNew.submit = ->
     user: payingUser
 
   Meteor.call('createExpense', params)
-  Router.go 'trips.show', { _id: getRouterParams()._id }
-
-Template.expensesNew.cancel = ->
-  Router.go 'trips.show', { _id: getRouterParams()._id }
+  IronBender.go 'trips.show', { _id: getRouterParams()._id }, { animation: 'slideOverUpClose' }
 
 Template.expensesNew.events
   'submit': (e) ->

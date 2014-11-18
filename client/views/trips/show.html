@@ -1,18 +1,20 @@
 <template name="tripsShow">
-  {{#layoutHeader}}
-    {{> nav}}
-    {{#tripHeader current=currentBudget total=budgetAmount}}{{name}}{{/tripHeader}}
-  {{/layoutHeader}}
+  <div class="Layout">
+    {{#layoutHeader}}
+      {{> nav}}
+      {{#tripHeader current=currentBudget total=budgetAmount}}{{name}}{{/tripHeader}}
+    {{/layoutHeader}}
 
-  {{#layoutContent tripShow="true"}}
-    <div class="Page">
-      {{#boxList timeline="true"}}
-        {{#each expenses}}
-          {{> boxExpense}}
-        {{/each}}
-      {{/boxList}}
-    </div>
-  {{/layoutContent}}
+    {{#layoutContent tripShow="true"}}
+      <div class="Page">
+        {{#boxList timeline="true"}}
+          {{#each expenses}}
+            {{> boxExpense}}
+          {{/each}}
+        {{/boxList}}
+      </div>
+    {{/layoutContent}}
 
-  {{> actionBar classes="u-fixedBottom"}}
+    {{> actionBar classes="u-fixedBottom"}}
+  </div>
 </template>

@@ -1,9 +1,9 @@
 Template.tripsShow.created = () ->
   Navigation.onPrevious ->
-    Router.go('trips.index')
+    IronBender.go('trips.index', {}, { animation: 'slideRight' })
 
 Template.tripsShow.events
   'click .IconAddExpense': ->
-    Router.go 'expenses.new', { _id: Router.current().params._id }
+    IronBender.go 'expenses.new', { _id: Router.current().params._id }, { animation: 'slideOverUp' }
   'click .IconFriends': ->
-    Router.go 'users.index', { _id: Router.current().params._id }
+    IronBender.go 'users.index', { _id: Router.current().params._id }, { animation: 'slideLeft' }

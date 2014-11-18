@@ -1,21 +1,23 @@
 <template name="tripsBudget">
-  {{#layoutHeader}}
-    {{> nav}}
-    <div class="PageHeader">{{name}}</div>
-  {{/layoutHeader}}
+  <div class="Layout">
+    {{#layoutHeader}}
+      {{> nav}}
+      <div class="PageHeader">{{name}}</div>
+    {{/layoutHeader}}
 
-  {{#layoutContent}}
-    <form class="Page">
-      <div class="Grid">
-        <div class="Column--70 Column">
-          <input type="text" name="amount" class="TextInput" {{inputAttributes}}>
+    {{#layoutContent}}
+      <form class="Page">
+        <div class="Grid">
+          <div class="Column--70 Column">
+            <input type="text" name="amount" class="TextInput" {{inputAttributes}}>
+          </div>
+          <div class="Column Column--30">
+            {{> dropdownInput list=currencies selected=selectedCurrency id="currency"}}
+          </div>
         </div>
-        <div class="Column Column--30">
-          {{> dropdownInput list=currencies selected=selectedCurrency id="currency"}}
-        </div>
-      </div>
 
-      <input type="submit" class="u-displayNone">
-    </form>
-  {{/layoutContent}}
+        <input type="submit" class="u-displayNone">
+      </form>
+    {{/layoutContent}}
+  </div>
 </template>

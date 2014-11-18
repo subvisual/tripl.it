@@ -1,13 +1,15 @@
 <template name="tripsNew">
-  {{#layoutHeader}}
+  <div class="Layout">
+    {{#layoutHeader}}
     {{> nav}}
     <div class="PageHeader">{{name}}</div>
-  {{/layoutHeader}}
+    {{/layoutHeader}}
 
-  {{#layoutContent}}
+    {{#layoutContent}}
     <form class="Page">
       <input id="trip_name" type="text" name="name" placeholder={{i18n 'trips.new.namePlaceholder'}} class="TextInput">
       <input type="submit" class="u-displayNone">
     </form>
-  {{/layoutContent}}
+    {{/layoutContent}}
+  </div>
 </template>

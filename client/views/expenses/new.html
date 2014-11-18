@@ -1,19 +1,21 @@
 <template name="expensesNew">
-  {{#layoutHeader}}
-    {{> nav}}
-    <div class="PageHeader">{{name}}</div>
-  {{/layoutHeader}}
+  <div class="Layout">
+    {{#layoutHeader}}
+      {{> nav}}
+      <div class="PageHeader">{{name}}</div>
+    {{/layoutHeader}}
 
-  {{#layoutContent}}
-    <form class="Page">
-      <input id="expense_value" type="number" name="expense_value" placeholder="30" class="TextInput">
-      {{> radioGroup name="expense_category" list=categories}}
-      <select name="expense_paying">
-        {{#each trip.users}}
-        <option>{{email}}</option>
-        {{/each}}
-      </select>
-      <input type="submit" class="u-displayNone">
-    </form>
-  {{/layoutContent}}
+    {{#layoutContent}}
+      <form class="Page">
+        <input id="expense_value" type="number" name="expense_value" placeholder="30" class="TextInput">
+        {{> radioGroup name="expense_category" list=categories}}
+        <select name="expense_paying">
+          {{#each trip.users}}
+          <option>{{email}}</option>
+          {{/each}}
+        </select>
+        <input type="submit" class="u-displayNone">
+      </form>
+    {{/layoutContent}}
+  </div>
 </template>
