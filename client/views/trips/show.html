@@ -1,11 +1,11 @@
 <template name="tripsShow">
-  <div class="Layout">
+  <div class="Layout is--tripShow">
     {{#layoutHeader}}
       {{> nav}}
       {{#tripHeader current=currentBudget total=budgetAmount}}{{name}}{{/tripHeader}}
     {{/layoutHeader}}
 
-    {{#layoutContent tripShow="true"}}
+    {{#layoutContent}}
       <div class="Page">
         {{#boxList timeline="true"}}
           {{#each expenses}}
