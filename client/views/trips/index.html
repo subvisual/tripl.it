@@ -1,18 +1,24 @@
 <template name="tripsIndex">
-  <div class="Layout">
-    {{#layoutHeader}}
-      {{> nav}}
-      <div class="PageHeader">{{name}}</div>
-    {{/layoutHeader}}
+  {{#if empty}}
+    <div class="Layout ImageBackground">
+      <a href="#" id="new_trip" class="ButtonCircle u-alignMiddle">Create first trip</a>
+    </div>
+  {{else}}
+    <div class="Layout">
+      {{#layoutHeader}}
+        {{> nav}}
+        <div class="PageHeader">{{name}}</div>
+      {{/layoutHeader}}
 
-    {{#layoutContent}}
-      <div class="Page">
-        {{#boxList}}
-          {{#each trips}}
-            {{> boxTrip id=_id description=name path=path }}
-          {{/each}}
-        {{/boxList}}
-      </div>
-    {{/layoutContent}}
-  </div>
+      {{#layoutContent}}
+        <div class="Page">
+          {{#boxList}}
+            {{#each trips}}
+              {{> boxTrip id=_id description=name path=path }}
+            {{/each}}
+          {{/boxList}}
+        </div>
+      {{/layoutContent}}
+    </div>
+  {{/if}}
 </template>

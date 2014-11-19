@@ -13,5 +13,6 @@ Template.layout.events
       Router.go 'users.index', { _id: id }
 
 Template.layout.rendered = ->
-  Overscroll(document.querySelector('.Page'))
+  if document.querySelector('.Page')
+    Overscroll(document.querySelector('.Page'))
   Bender.initialize(@find('#content-container'))
