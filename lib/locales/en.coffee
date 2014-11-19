@@ -29,5 +29,5 @@ i18n.map 'en',
 
   signIn:
     title: 'Sign In'
-    emailPlaceholder: 'Type your email here...'
-    passwordPlaceholder: 'Type your password here...'
+    emailPlaceholder: 'someone@groupbuddies.com'
+    passwordPlaceholder: 'ilikechocolate'
