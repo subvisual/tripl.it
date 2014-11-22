@@ -1,6 +1,6 @@
 Template.tripsIndex.helpers
   empty: ->
-    @trips.count() >= 0
+    @trips.count() == 0
 
 Template.tripsIndex.events
   'click #new_trip': (e) ->
