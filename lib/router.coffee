@@ -62,6 +62,3 @@ Router.route 'sign_out', ->
 
 Router.route 'sign_up',
   name: 'sign.up'
-
-Router.route 'lab',
-  name: 'lab'
