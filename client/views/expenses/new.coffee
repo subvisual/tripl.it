@@ -1,6 +1,3 @@
-Template.expensesNew.created = () ->
-  Navigation.onNext(_.bind(Template.expensesNew.submit, this))
-
 Template.expensesNew.submit = ->
   value = parseInt($('input[name="expense_value"]').val())
   categoryId = $('input[name="expense_category"]:checked').val()
@@ -17,6 +14,9 @@ Template.expensesNew.submit = ->
 Template.expensesNew.events
   'submit': (e) ->
     e.preventDefault()
+    Template.expensesNew.submit()
+
+  'tap #navigation-next': ->
     Template.expensesNew.submit()
 
   'tap #navigation-previous': ->

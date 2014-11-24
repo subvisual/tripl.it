@@ -11,7 +11,7 @@ beforeHooks =
     Navigation.reset()
     @next()
 
-Router.onBeforeAction beforeHooks.resetNavigation
+#Router.onBeforeAction beforeHooks.resetNavigation
 Router.onBeforeAction beforeHooks.isLoggedIn,
   except: [ 'sign.in', 'sign.up', 'lab' ]
 
