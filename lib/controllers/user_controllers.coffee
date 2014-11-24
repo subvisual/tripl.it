@@ -11,7 +11,6 @@
 
     trip: trip
     users: users
-    name: i18n('users.index.title')
 
 @UsersNewController = RouteController.extend
   data: ->
