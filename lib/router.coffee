@@ -45,6 +45,10 @@ Router.route 'trips/:_id/users/new',
   name: 'users.new'
   controller: 'UsersNewController'
 
+Router.route 'trip/:_id/expenses',
+  name: 'expenses.index'
+  controller: 'ExpensesIndexController'
+
 Router.route 'trip/:_id/expenses/new',
   name: 'expenses.new'
   controller: 'ExpensesNewController'

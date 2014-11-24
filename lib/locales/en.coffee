@@ -19,7 +19,7 @@ i18n.map 'en',
       title: 'Friends with you'
 
   expenses:
-    new:
+    index:
       title: 'Add Expense'
 
   signUp:
