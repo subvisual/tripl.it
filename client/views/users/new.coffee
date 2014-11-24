@@ -10,6 +10,11 @@ Template.usersNew.submit = ->
 Template.usersNew.cancel = ->
   Router.go 'tripsAdd'
 
+Template.usersNew.helpers
+  navigationAttributes: ->
+    next: 'IconAdd'
+    previous: 'IconBack'
+
 Template.usersNew.events
   'submit': (e) ->
     e.preventDefault()

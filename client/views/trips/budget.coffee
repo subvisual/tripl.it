@@ -6,10 +6,6 @@ currencies = [
 
 selectedCurrency = currencies[0]
 
-Template.tripsBudget.created = () ->
-  Navigation.onPrevious(_.bind(Template.tripsBudget.cancel, this))
-  Navigation.onNext(_.bind(Template.tripsBudget.submit, this))
-
 Template.tripsBudget.helpers
   inputAttributes: ->
     placeholder: "Amount you plan to spend"
@@ -23,19 +19,26 @@ Template.tripsBudget.helpers
   selectedCurrency: ->
     selectedCurrency
 
-Template.tripsBudget.submit = ->
-  amount = parseInt($('[name="amount"]').val())
-  currency = $('[name="dropdown_selected"]').text()
-  Trips.update { _id: getRouterParams()._id },
-    $set:
-      budgetAmount: amount,
-      budgetCurrency: currency
-  Router.go 'trips.show', { _id: getRouterParams()._id }
-
-Template.tripsBudget.cancel = ->
-  Router.go 'users.new', { _id: getRouterParams()._id }
+  navigationAttributes: ->
+    next: 'IconAdd'
+    previous: 'IconBack'
 
 Template.tripsBudget.events
+  'tap #navigation-next': ->
+    submit()
+
+  'tap #navigation-previous': ->
+    IronBender.go 'users.new', { _id: getRouterParams()._id }, { animation: 'slideRight' }
+
   'submit': (e) ->
     e.preventDefault()
-    Template.tripsBudget.submit()
+    submit()
+
+submit = ->
+    amount = parseInt($('[name="amount"]').val())
+    currency = $('[name="dropdown_selected"]').text()
+    Trips.update { _id: getRouterParams()._id },
+      $set:
+        budgetAmount: amount,
+        budgetCurrency: currency
+    IronBender.go 'trips.show', { _id: getRouterParams()._id }, { animation: 'slideLeft' }

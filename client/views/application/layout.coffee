@@ -3,11 +3,11 @@ Template.layout.helpers
     Router.current().route.getName() == 'trips.show'
 
 Template.layout.events
-  'click .IconAddExpense': ->
+  'tap .IconAddExpense': ->
     id = Router.current().params._id
     if id
       Router.go 'expenses.new', { _id: id  }
-  'click .IconFriends': ->
+  'tap .IconFriends': ->
     id = Router.current().params._id
     if id
       Router.go 'users.index', { _id: id }
