@@ -3,9 +3,9 @@ reactiveForm = new ReactiveForm
 amountId = 'amount'
 currencyId = 'currency'
 currencies = [
-  {value: "EUR", description: "Euros"},
-  {value: "US", description: "$ US Dollars"},
-  {value: "GBP", description: "£ Pound Sterling"}
+  {value: 'EUR', description: 'Euros'},
+  {value: 'US', description: '$ US Dollars'},
+  {value: 'GBP', description: '£ Pound Sterling'}
 ]
 
 Template.tripsBudget.created = ->
@@ -14,14 +14,15 @@ Template.tripsBudget.created = ->
 Template.tripsBudget.helpers
   currencyAttributes: ->
     list: currencies
-    id: "currency"
+    id: 'currency'
     form: reactiveForm
+    label: 'Select your currency'
 
   inputAttributes: ->
     placeholder: i18n('trips.budget.amountPlaceholder')
-    type: "number"
-    name: "amount"
-    id: "amount"
+    type: 'number'
+    name: 'amount'
+    id: 'amount'
 
   navigationAttributes: ->
     next: 'IconAdd'

@@ -2,12 +2,21 @@
   <div class="Dropdown">
     <div class="Dropdown-selected">{{ selected.description }}</div>
 
-    <ul class="Dropdown-dropdown">
-      {{#each list}}
-        <li data-value="{{value}}" class="Dropdown-option">
-          {{description}}
-        </li>
-      {{/each}}
-    </ul>
+    <div class="Dropdown-popup">
+      <div class="Dropdown-dropdown">
+        <h1 class="Dropdown-header">{{label}}</h1>
+        <ul class="Dropdown-list">
+          {{#each list}}
+            {{> dropdownItem object=this form=../form id=../id }}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
   </div>
+</template>
+
+<template name="dropdownItem">
+  <li class="Dropdown-option {{ selected }}">
+    {{ object.description }}
+  </li>
 </template>
