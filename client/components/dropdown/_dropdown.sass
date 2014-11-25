@@ -1,0 +1,21 @@
+.Dropdown
+  position: relative
+  height: $input-height
+  line-height: $input-height
+  background: $black
+  color: white
+  cursor: pointer
+
+  .Dropdown-dropdown
+    display: none
+    left: 50%
+    list-style-type: none
+    position: fixed
+    top: 50%
+    transform: translate3d(-50%, -50%, 0)
+
+  .Dropdown-dropdown.is-open
+    display: block
+
+.Dropdown-dropdown
+  color: black

@@ -1,0 +1,13 @@
+<template name="dropdown">
+  <div class="Dropdown">
+    <div class="Dropdown-selected">{{ selected.description }}</div>
+
+    <ul class="Dropdown-dropdown">
+      {{#each list}}
+        <li data-value="{{value}}" class="Dropdown-option">
+          {{description}}
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</template>
