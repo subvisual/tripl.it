@@ -1,21 +1,25 @@
 <template name="expensesNew">
   <div class="Layout">
     {{#layoutHeader}}
-      {{> navigation navigationAttributes}}
-      <div class="PageHeader">{{i18n 'expenses.new.title' }}</div>
+    {{> navigation navigationAttributes}}
+    <div class="PageHeader">{{i18n 'expenses.new.title' }}</div>
     {{/layoutHeader}}
 
     {{#layoutContent}}
-      <form class="Page">
-        <input id="expense_value" type="number" name="expense_value" placeholder="30" class="TextInput">
-        {{> radioGroup name="expense_category" list=categories}}
-        <select name="expense_paying">
-          {{#each trip.users}}
-          <option>{{email}}</option>
-          {{/each}}
-        </select>
-        <input type="submit" class="u-displayNone">
-      </form>
+    <form class="Page">
+      {{> radioGroup name="expense_category" list=categories}}
+
+      <div class="Grid">
+        <div class="Column--70 Column">
+          <input id="expense_value" type="number" name="expense_value" placeholder="30" class="TextInput">
+        </div>
+        <div class="Column Column--30">
+          {{> userDropdown usersAttributes }}
+        </div>
+      </div>
+
+      <input type="submit" class="u-displayNone">
+    </form>
     {{/layoutContent}}
   </div>
 </template>

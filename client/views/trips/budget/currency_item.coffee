@@ -1,8 +1,8 @@
-Template.currencyItem.helpers
+Template.userItem.helpers
   selected: ->
     'is-selected' if @parent.form.get(@parent.id) == @object
 
-Template.currencyItem.events
+Template.userItem.events
   'tap': (e, template) ->
     form = template.data.parent.form
     id = template.data.parent.id
