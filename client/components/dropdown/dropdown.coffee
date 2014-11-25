@@ -1,7 +1,20 @@
+# The dropdown receives the following arguments
+#
+#             form: a ReactiveForm
+#               id: the id to use in the ReactiveForm
+#     itemtemplate: a string with the name of the template of the dropdown list
+#            label: a label to use in the popup header
+#             list: a list of things to select from
+# selectedtemplate: a string with the name of the template to use to show the current selected item
+
 Template.dropdown.rendered = ->
   @dropdownPopup = $(@$('.Dropdown-popup'))
 
 Template.dropdown.helpers
+  selectedTemplate: ->
+    Template[@selectedTemplate]
+  itemTemplate: ->
+    Template[@parent.itemTemplate]
   selected: ->
     @form.get(@id)
 
@@ -12,14 +25,3 @@ Template.dropdown.events
   'tap .Dropdown-selected': (e, template) ->
     template.dropdownPopup.addClass('is-open')
     e.stopPropagation()
-
-Template.dropdownItem.helpers
-  selected: ->
-    'is-selected' if @form.get(@id) == @object
-
-Template.dropdownItem.events
-  'tap': (e, template) ->
-    form = template.data.form
-    id = template.data.id
-    object = template.data.object
-    form.set(id, object)
