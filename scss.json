@@ -1,4 +1,5 @@
 {
+  "enableAutoprefixer": true,
   "includePaths": [
   ]
 }

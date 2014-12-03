@@ -1,5 +1,5 @@
 <template name="radioGroup">
   <div class="RadioGroup">
-    {{#each list}}{{> radioButton }}{{/each}}
+    {{#each list}}{{> radioButton form=../form id=../id object=this }}{{/each}}
   </div>
 </template>

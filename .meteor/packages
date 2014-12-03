@@ -13,9 +13,9 @@ mystor:device-detection
 iron:router
 ground:db
 matb33:collection-hooks
-appcache
 fastclick
 wolves:bourbon
 percolate:velocityjs
 gabrielpoca:bender
+fortawesome:fontawesome
 

@@ -6,14 +6,17 @@
   height: $navigation-height
   background: $navigation-background
   color: $navigation-color
+
+  display: flex
+  justify-content: space-between
+  align-items: center
+
   // needed to stay above animation
   z-index: 102 
 
   .Navigation-item
-    width: 33.3%
-    display: inline-block
+    width: 30%
     padding: 0 $space
-    height: 100%
 
   .Navigation-item:first-child
     text-align: left
@@ -22,7 +25,6 @@
     text-align: right
 
   [class^=Icon], [class^=Image]
-    margin-top: $vertical-space / 2
     height: $inner-height
 
   a, .Navigation-item

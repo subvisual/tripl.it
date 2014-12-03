@@ -1,4 +1,23 @@
-@mixin IconBase($image, $size: 60px)
+$icon-size: 60px
+$icon-font-size: 36px
+
+@mixin FontAwesomeBase($content)
+  font-size: $icon-font-size
+  height: $icon-size
+  line-height: $icon-font-size
+  position: relative
+  width: $icon-size
+  &:before
+    content: $content
+    font-family: FontAwesome
+    font-style: normal
+    font-weight: normal
+    text-decoration: inherit
+  &.is-success
+    color: $green
+
+
+@mixin IconBase($image, $size: $icon-size)
   display: inline-block
   background-size: contain
   background-repeat: no-repeat
@@ -8,9 +27,13 @@
   height: $size
 
 .IconAdd
-  +IconBase('img/icon-add.png')
+  //+IconBase('img/icon-add.png')
+  +FontAwesomeBase("\f067")
 .IconBack
   +IconBase('img/icon-back.png')
+
+.IconClose
+  +FontAwesomeBase("\f00d")
 
 .IconAddExpense
   .background

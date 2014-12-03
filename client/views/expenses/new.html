@@ -1,13 +1,13 @@
 <template name="expensesNew">
   <div class="Layout">
     {{#layoutHeader}}
-    {{> navigation navigationAttributes}}
-    <div class="PageHeader">{{i18n 'expenses.new.title' }}</div>
+      {{>navigation navigationAttributes }}
+      <div class="PageHeader">{{i18n 'expenses.new.title' }}</div>
     {{/layoutHeader}}
 
     {{#layoutContent}}
     <form class="Page">
-      {{> radioGroup name="expense_category" list=categories}}
+      {{> radioGroup categoryAttributes }}
 
       <div class="Grid">
         <div class="Column--70 Column">

@@ -1,2 +1,4 @@
 Meteor.startup ->
-  $('body').hammer()
+  $('body').hammer
+    preventDefault: true
+    preventMouse: true

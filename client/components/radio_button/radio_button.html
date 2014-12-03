@@ -1,17 +1,16 @@
 <template name="radioButton">
-  <div class="RadioButton">
-    <input type="radio" name="{{../name}}" class="RadioButton-input" id="{{value}}" value="{{value}}">
-    <label for="{{value}}" class="RadioButton-label ">
+  <div class="RadioButton {{ active }}">
+    <div class="RadioButton-label">
       <div class="RadioButton-labelInside">
-        <div>{{description}}</div>
-        {{#if image}}
-          <img class="RadioButton-image" src="{{image}}">
+        <div>{{object.description}}</div>
+        {{#if object.image}}
+          <img class="RadioButton-image" src="{{object.image}}">
         {{else}}
-          {{#if class}}
-            <div class="RadioButton-image {{class}}"></div>
+          {{#if object.class}}
+            <div class="RadioButton-image {{object.class}}"></div>
           {{/if}}
         {{/if}}
       </div>
-    </label>
+    </div>
   </div>
 </template>

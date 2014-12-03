@@ -1,16 +1,31 @@
-reactiveForm = new ReactiveForm
+valueId = 'value'
 usersId = 'users'
+categoryId = 'category'
+
+reactiveForm = new ReactiveForm([valueId, usersId, categoryId])
+categories = []
+
+Meteor.startup ->
+  categories = _.map Categories.all(), (category) ->
+    upperCase = "#{category.value[0].toUpperCase()}#{category.value.slice(1)}"
+    return _.extend({class: "Icon#{upperCase}"}, _.omit(category, 'image'))
+
+Template.expensesNew.rendered = ->
+  Bender.animate('slideOverUpClose')
 
 Template.expensesNew.events
   'submit': (e) ->
     e.preventDefault()
     Template.expensesNew.submit()
 
-  'tap #navigation-next': ->
+  'keyup [name="expense_value"]': (e) ->
+    reactiveForm.set(valueId, $(e.target).val())
+
+  'tap .IconAdd': ->
     Template.expensesNew.submit()
 
-  'tap #navigation-previous': ->
-    IronBender.go 'trips.show', { _id: getRouterParams()._id }, { animation: 'slideOverUpClose' }
+  'tap .IconClose': ->
+    Router.go 'trips.show', { _id: getRouterParams()._id }
 
 Template.expensesNew.helpers
   usersAttributes: ->
@@ -18,24 +33,28 @@ Template.expensesNew.helpers
     id: usersId
     list: Trips.findOne(getRouterParams()._id).users
 
-  navigationAttributes: ->
-    next: 'IconAdd'
-    previous: 'IconBack'
+  categoryAttributes: ->
+    form: reactiveForm
+    id: categoryId
+    list: categories
 
-  categories: ->
-    return _.map Categories.all(), (category) ->
-      upperCase = "#{category.value[0].toUpperCase()}#{category.value.slice(1)}"
-      return _.extend({class: "Icon#{upperCase}"}, _.omit(category, 'image'))
+  navigationAttributes: ->
+    if reactiveForm.valid()
+      next: 'IconAdd is-success'
+      previous: 'IconClose'
+    else
+      previous: 'IconClose'
 
 Template.expensesNew.submit = ->
-  value = parseInt($('input[name="expense_value"]').val())
-  categoryId = $('input[name="expense_category"]:checked').val()
+  value = parseInt(reactiveForm.get(valueId))
+  category = reactiveForm.get(categoryId)
   payingUser = reactiveForm.get(usersId).email
-  params =
-    category: Categories.findById(categoryId)
+  expenseParams =
+    category: Categories.findById(category)
     tripId: getRouterParams()._id
     value: value
     user: payingUser
 
-  Meteor.call('createExpense', params)
-  IronBender.go 'trips.show', { _id: getRouterParams()._id }, { animation: 'slideOverUpClose' }
+  Meteor.call('createExpense', expenseParams)
+  Router.go 'trips.show', { _id: getRouterParams()._id }
+  reactiveForm.clean()

@@ -1,10 +1,10 @@
 class @ReactiveForm
-  @dep = undefined
-  @map = {}
+  dep: undefined
+  map: {}
 
-  constructor: (selected) ->
+  constructor: (keys) ->
     @dep = new Tracker.Dependency
-    @map = {}
+    @clean(keys)
 
   set: (key, value) =>
     @map[key] = value
@@ -13,3 +13,15 @@ class @ReactiveForm
   get: (key) =>
     @dep.depend()
     @map[key]
+
+  valid: (keys) =>
+    @dep.depend()
+    if !_.isArray(keys)
+      keys = Object.keys(@map)
+    _.every keys, ((key) -> !!@map[key]), this
+
+  clean: (keys) =>
+    @dep.changed()
+    if !_.isArray(keys)
+      keys = Object.keys(@map)
+    @map[key] = undefined for key in keys
