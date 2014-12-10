@@ -1,0 +1,16 @@
+head
+  title Tripl.it
+  meta(name="viewport" content="user-scalable=0, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=medium-dpi")
+  meta(http-equiv="cleartype" content="on")
+  meta(name="apple-mobile-web-app-title" content="Tripl.it")
+  link(rel="icon" href="/favicon.ico")
+
+body
+  +application
+
+template(name="application")
+  .PageList
+    .Page
+      +tripsIndex
+    .Page
+      +expensesIndex
